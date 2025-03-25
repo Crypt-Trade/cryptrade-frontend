@@ -1,0 +1,34 @@
+.navbar {
+    position: absolute;
+    width: 100%;
+    background: transparent !important; /* Transparent navbar */
+    color: white;
+    z-index: 10;
+  }
+  .navbar a {
+    color: white !important;
+    font-size: 18px; 
+    font-weight: 700;
+    position: relative; /* Ensures the pseudo-element is positioned relative to text */
+    text-decoration: none;
+    padding-bottom: 5px; /* Adds space between text and underline */
+  }
+  .navbar-nav .nav-item {
+    margin-left: 20px;  /* Adjust space between menu items */
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;  /* Centers the underline */
+    bottom: -3px; /* Adjust spacing below text */
+    width: 0;  /* Starts with no width */
+    height: 2px;
+    background: #e8e8e8;
+    transition: width 0.3s ease-in-out;
+    transform: translateX(-50%);
+  }
+  
+  /* Expands underline on hover */
+  .nav-link:hover::after {
+    width: 80%; /* Adjust width as needed */
+  }

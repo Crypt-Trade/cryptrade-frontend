@@ -1,0 +1,15 @@
+.gradientcard{
+    background: linear-gradient(to right, #5452b5, #a8c5f7);
+    border: none;
+    border-radius: 17px;
+}
+.gradientcard2{
+    background: linear-gradient(to right, #4fc24e , #a8c5f7);
+    border: none;
+    border-radius: 17px;
+}
+.gradientcard3{
+    background: linear-gradient(to right, #7f439c , #a8c5f7);
+    border: none;
+    border-radius: 17px;
+}
