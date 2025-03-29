@@ -32,3 +32,28 @@
   .nav-link:hover::after {
     width: 80%; /* Adjust width as needed */
   }
+  .navbar-brand img {
+    width: 200px; /* Default size */
+  }
+  
+  /* Tablet View */
+  @media (max-width: 992px) {
+    .navbar-brand img {
+      width: 120px;
+    }
+  }
+  
+  /* Mobile View */
+  @media (max-width: 768px) {
+    .navbar-brand img {
+      width: 124px;
+    }
+  }
+  
+  /* Small Mobile View */
+  @media (max-width: 480px) {
+    .navbar-brand img {
+      width: 120px;
+    }
+  }
+  

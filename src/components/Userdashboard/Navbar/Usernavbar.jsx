@@ -1,14 +1,17 @@
 import React, {useState}from 'react'
 import "../../../css/userdashboard/usernavbar.css"
+import  logo from "../../../assets/images/crypto.png";
 const Usernavbar = () => {
    
 
   return (
     <>
-   <div className="text-white vh-100 p-4" style={{backgroundColor:"#072670"}}>
-      <h4 className="text-center">Wowtrade</h4>
+   <div className="text-white vh-100 " style={{backgroundColor:"#004d93"}}>
+      <a className="navbar-brand ms-3" href="/">
+        <img src={logo} className="logo-img" alt="Logo" />
+      </a>
 
-      <ul className="list-unstyled">
+      <ul className="list-unstyled p-3">
         <li><a href="/userdashboard" className="text-white d-block pt-4 sidebaritem ">
         <div className='d-flex'>
             <div>🏠</div>
@@ -21,9 +24,15 @@ const Usernavbar = () => {
             <span className="font-weight-normal ms-3">Welcome</span>
         </div>
          </a></li>
+         <li><a href="/userdashboard/packages" className="text-white d-block pt-4 sidebaritem">
+        <div className='d-flex'>
+            <div>📦</div>
+            <span className="font-weight-normal ms-3">All packages</span>
+        </div>
+         </a></li>
          <li><a href="/userdashboard/register" className="text-white d-block pt-4 sidebaritem">
         <div className='d-flex'>
-            <div>👤</div>
+            <div>🧑‍💼</div>
             <span className="font-weight-normal ms-3">Registration</span>
         </div>
          </a></li>

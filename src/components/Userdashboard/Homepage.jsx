@@ -78,7 +78,17 @@ const Homepage = () => {
           </div>
         </div>
       </div>
-      <div className="d-flex">
+      {/* <div className="d-flex justify-content-center">
+      <div className="h5 text-center fw-bold">Left link:-
+      </div>
+      <div className="h5 text-center fw-bold"> 10 USDT</div>
+      </div> */}
+      {/* <div className="d-flex justify-content-center">
+      <div className="h5 text-center fw-bold">Right link:-
+      </div>
+      <div className="h5 text-center fw-bold"> 10 USDT</div>
+      </div> */}
+      <div className="d-flex justify-content-center">
       <div className="h5 text-center fw-bold">Minimum Withdraw:-
       </div>
       <div className="h5 text-center fw-bold"> 10 USDT</div>

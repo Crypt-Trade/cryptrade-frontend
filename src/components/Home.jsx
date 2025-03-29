@@ -24,9 +24,12 @@ const Home = () => {
      {/* <Nav/> */}
      <nav className="navbar navbar-expand-lg">
   <div className="container-fluid ">
-    <a className="navbar-brand" href="#"><img src={logo} width={100}/></a>
+  <a className="navbar-brand" href="#">
+  <img src={logo} className="logo-img" alt="Logo" />
+</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
+    <i className="fa fa-bars text-white"></i> 
+    
     </button>
     <div className="collapse navbar-collapse " id="navbarNavDropdown">
       <ul className="navbar-nav ms-auto">
@@ -38,6 +41,9 @@ const Home = () => {
         </li>
         <li className="nav-item">
           <a className="nav-link" href="#service-container">Services</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/usersignup/verifysponsor" target='_blank'>Join us</a>
         </li>
         <li className="nav-item">
           <a className="nav-link" href="/login" target='_blank'>Login</a>

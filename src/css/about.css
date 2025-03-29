@@ -10,3 +10,23 @@
 .aboutrow{
     gap: 8%;
 }
+@media (max-width: 992px) {
+    .aboutcard{
+       
+        border-radius: 50px;
+    }
+    }
+  
+  /* Mobile View */
+  @media (max-width: 768px) {
+    .navbar-brand img {
+      width: 124px;
+    }
+  }
+  
+  /* Small Mobile View */
+  @media (max-width: 480px) {
+    .navbar-brand img {
+      width: 120px;
+    }
+  }

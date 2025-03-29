@@ -21,7 +21,7 @@ const Dashboard = ({children}) => {
       </div>
 
       {/* Footer */}
-      <footer className="p-3 text-center bg-secondary text-white mt-4">
+      <footer className="p-3 text-center bg-secondary text-white ">
         Copyright © 2025 Synthosphere Technologies Pvt Ltd. All rights reserved.
       </footer>
     </>

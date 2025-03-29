@@ -58,3 +58,8 @@
     box-shadow: 0 8px 18px rgba(255, 255, 255, 0.2);
     width: 400px;
 }
+.logoimage{
+  position: relative; /* So it's not affected by the pseudo-element */
+   
+    backdrop-filter: blur(15px);
+}

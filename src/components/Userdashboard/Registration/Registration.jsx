@@ -1,15 +1,20 @@
 import React , {useState} from 'react'
+import axios from 'axios';
+import swal from 'sweetalert';
 
 const Registration = () => {
+  const sponsorId = sessionStorage.getItem("mySponsorId");
   const [formData, setFormData] = useState({
-    sponsorId: "",
+    sponsorId: sponsorId,
     name: "",
-    mobile: "",
+    mobileNumber: "",
     email: "",
     password: "",
   });
-
+  
+const [binaryposition, setbinaryposition] = useState();
   const [showPassword, setShowPassword] = useState(false);
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,10 +24,41 @@ const Registration = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form Data Submitted:", formData);
+  const handleChange_radiobutton = (event) => {
+    setbinaryposition(event.target.value);
   };
+  const handleSubmit = async (event) => {
+    const ROOT_URL = import.meta.env.VITE_LOCALHOST_URL;
+    event.preventDefault();
+    if (!binaryposition || !formData.mobileNumber || !formData.email || !formData.password) {
+      swal("Opps!", "Please fill out all required fields!", "error");
+     
+    }
+  
+    //  alert("sumit")
+    else{
+    try {
+      if (binaryposition === 'left') {
+          // API call for left position
+          const response = await axios.post(ROOT_URL+'/api/auth/register-user-left',formData)
+          console.log('Left API Response:', response.data);
+          swal("Thank You!", "Registration sucessfully completed!", "success");
+          window.location.reload();
+      } else if (binaryposition === 'right') {
+          // API call for right position
+          const response = await axios.post(ROOT_URL+'/api/auth/register-user-right', formData);
+          console.log('Right API Response:', response.data);
+          swal("Thank You!", "Registration sucessfully completed!", "success");
+          window.location.reload();
+      }
+  } catch (error) {
+      console.error('Error in binary position API:', error);
+      swal('Error', error.response.data.message , 'error');
+  }
+  }
+}
+    
+  
   return (
    <>
      <div className="container d-flex justify-content-center align-items-center vh-100">
@@ -35,9 +71,9 @@ const Registration = () => {
               type="text"
               className="form-control"
               name="sponsorId"
-              value="123456"
+              value={formData.sponsorId}
               readOnly
-              onChange={handleChange}
+              
               required
             />
           </div>
@@ -46,7 +82,7 @@ const Registration = () => {
                       htmlFor="inputPassword"
                       className="col-sm-3 col-form-label"
                     >
-                      Position
+                      Position:
                     </label>
                   <div className="col-sm-9 mt-2">
                       <div className="form-check form-check-inline">
@@ -57,9 +93,9 @@ const Registration = () => {
                           type="radio"
                           
                           id="inlineRadio5"
-                          value="Individual"
-                          // checked={registrationType === 'Individual'}
-          // onChange={handleChange_radiobutton}
+                          value="left"
+                          checked={binaryposition === 'left'}
+          onChange={handleChange_radiobutton}
                         />
                         
                         </label>
@@ -72,9 +108,9 @@ const Registration = () => {
                           type="radio"
                         
                           id="inlineRadio4"
-                          value="Business Entity"
-                          // checked={registrationType === 'Business Entity'}
-                          // onChange={handleChange_radiobutton}
+                          value="right"
+                          checked={binaryposition === 'right'}
+                          onChange={handleChange_radiobutton}
                         />
                         </label>
                       </div>
@@ -99,8 +135,8 @@ const Registration = () => {
             <input
               type="tel"
               className="form-control"
-              name="mobile"
-              value={formData.mobile}
+              name="mobileNumber"
+              value={formData.mobileNumber}
               onChange={handleChange}
               required
             />
