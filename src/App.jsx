@@ -21,6 +21,8 @@ import Signupleft from "./components/Userdashboard/Registration/Signupleft.jsx";
 import Signupright from "./components/Userdashboard/Registration/Signupright.jsx";
 import Verifysponsor from "./components/UserSignup/Verifysponsor.jsx";
 import Signup from "./components/UserSignup/Signup.jsx";
+import Walletdetails from "./components/Userdashboard/Walletdetails/Walletdetails.jsx";
+import Topuplogin from "./Topupdashboard/Login/Topuplogin.jsx";
 function App() {
  
 
@@ -41,10 +43,13 @@ function App() {
         <Route path='/userdashboard/reports' element={<Dashboardlayout><Reports /></Dashboardlayout>} />
         <Route path='/userdashboard/ewallet' element={<Dashboardlayout><Wallet /></Dashboardlayout>} />
         <Route path='/userdashboard/packages' element={<Dashboardlayout><Allpackages/></Dashboardlayout>} />
+        <Route path='/userdashboard/walletdetails' element={<Dashboardlayout><Walletdetails/></Dashboardlayout>} />
         <Route path='/userdashboard/buynow' element={<Dashboardlayout><Buynow/></Dashboardlayout>} />
+        
         <Route path='/usersignup/verifysponsor' element={<Verifysponsor />} />
         <Route path='/usersignup/Signup' element={<Signup />} />
         {/* Topup dashboard */}
+    <Route path='/topupdashboard/login' element={<Topuplogin/>}/>
       <Route path='/topupdashboard/home' element={<Topupdashboardlayout><Hometopup/></Topupdashboardlayout>}  />
       <Route path='/topupdashboard/wallethistory' element={<Topupdashboardlayout><Wallethistory /></Topupdashboardlayout>} />
       <Route path='/topupdashboard/billing' element={<Topupdashboardlayout><Billing /></Topupdashboardlayout>} />

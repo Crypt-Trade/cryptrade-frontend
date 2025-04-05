@@ -72,8 +72,8 @@ const Homepage = () => {
           <div className="card card-img-holder text-white h-75 usercard1">
             <div className="card-body">
               {/* <img src={pic2} className="card-img-absolute" alt="circle-image" /> */}
-              {/* <h4 className="font-weight-normal mb-3">Available stock</h4> */}
-              {/* <h2 className="mb-5">₹</h2> */}
+              <h4 className="font-weight-normal mb-3">Available stock</h4>
+              <h2 className="mb-5">₹</h2>
             </div>
           </div>
         </div>

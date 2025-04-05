@@ -26,7 +26,7 @@ const Genealogy = () => {
     try {
         // Make API request to search for the sponsor
         console.log(sponsorid);
-        const response = await axios.get(`${ROOT_URL}/api/user/searchUserInGenealogyTree/${sponsorid}`);
+        const response = await axios.get(`${ROOT_URL}/api/auth/searchUserInGenealogyTree/${sponsorid}`);
        setTreeData(response.data);
        console.log(response);
     } catch (err) {

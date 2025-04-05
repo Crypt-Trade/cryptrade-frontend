@@ -30,6 +30,12 @@ const Usernavbar = () => {
             <span className="font-weight-normal ms-3">All packages</span>
         </div>
          </a></li>
+         <li><a href="/userdashboard/walletdetails" className="text-white d-block pt-4 sidebaritem">
+        <div className='d-flex'>
+            <div>📦</div>
+            <span className="font-weight-normal ms-3">Wallet details</span>
+        </div>
+         </a></li>
          <li><a href="/userdashboard/register" className="text-white d-block pt-4 sidebaritem">
         <div className='d-flex'>
             <div>🧑‍💼</div>

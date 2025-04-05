@@ -1,15 +1,22 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../../../css/userdashboard/allpackage.css";
+import swal from "sweetalert"
 
 const Allpackages = () => {
   const navigate = useNavigate();
   const [selectedPackage, setSelectedPackage] = useState("");
   const [showDeposit, setShowDeposit] = useState(false);
   const [screenshot, setScreenshot] = useState(null);
-  const depositAddress = "0x1234567890abcdef1234567890abcdef12345678"; // Example deposit address
-
+  const [loading, setLoading] = useState(false);
+  const depositAddress = "0x1234567890abcdef1234567890abcdef12345678";
+  const useId = sessionStorage.getItem('mySponsorId');
+  const userobject_id = sessionStorage.getItem('userid');
+  const user_name = sessionStorage.getItem('username');
+  const ROOT_URL = import.meta.env.VITE_LOCALHOST_URL;
   const handlePackageChange = (event) => {
+
     setSelectedPackage(event.target.value);
     setShowDeposit(false);
     setScreenshot(null);
@@ -23,16 +30,39 @@ const Allpackages = () => {
     setScreenshot(event.target.files[0]);
   };
 
-  const handleSubmit = () => {
-    if (screenshot) {
-      navigate("/userdashboard/buynow");
-    } else {
+  const handleSubmit = async () => {
+    if (!screenshot) {
       alert("Please upload a screenshot before submitting.");
+      return;
+    }
+
+    setLoading(true);
+    const formData = new FormData();
+    formData.append("user_object_id", userobject_id); // Replace with actual user ID
+    formData.append("user_mySponsor_id", useId); // Replace with actual sponsor ID
+    formData.append("user_name", user_name); // Replace with actual user name
+    formData.append("order_price", selectedPackage === "kickstarter" ? 50 : selectedPackage === "bull" ? 100 : selectedPackage === "whales" ? 500 : 25);
+    formData.append("package_name", selectedPackage);
+    formData.append("image", screenshot);
+
+    try {
+      const response = await axios.post(`${ROOT_URL}/order/create`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      // alert("Order created successfully!");
+      swal("Thank you !" ,"Order created successfully!","success");
+       navigate("/userdashboard/reports");
+    } catch (error) {
+      // alert("Error submitting order: " + error.response?.data?.message || error.message);
+      swal("Error", "Error submitting order: " + error.response?.data?.message || error.message, "error");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div className="container">
+   
       <div className="row justify-content-center">
         {/* Kick Starter Package */}
         <div className="col-md-3 my-4">
@@ -105,61 +135,51 @@ const Allpackages = () => {
           </div>
         </div>
       </div>
-      <div className='d-flex justify-content-center my-3'>
-                <div className='mt-2'>Select Any Package:</div>
-                <div className='ms-3'>
-                    <select className="form-select" onChange={handlePackageChange}>
-                        <option value="">Select Package</option>
-                        <option value="kickstarter">Kickstarter: 50 USDT</option>
-                        <option value="bull">Bull: 100 USDT</option>
-                        <option value="whales">Whales: 500 USDT</option>
-                        <option value="monthly">Monthly: 25 USDT</option>
-                    </select>
-                </div>
-            </div>
-      {/* Deposit Section */}
-      {selectedPackage && (
-        <div className="d-flex justify-content-center my-5" >
-        <div className="card p-3 mt-3 w-50 rounded-3">
-          <h5 className="text-center">Confirm Your Deposit</h5>
-          {!showDeposit ? (
-            <div className="text-center py-4">
-            <button className="btn btn-primary w-25 " onClick={handleDepositClick}>
-              Deposit
-            </button>
-            </div>
-          ) : (
-            <>
-              <div className="mt-2">
-                <label>Deposit Address:</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  value={depositAddress}
-                  readOnly
-                />
-              </div>
-              <div className="mt-3">
-                <label>Upload Screenshot:</label>
-                <input
-                  type="file"
-                  className="form-control"
-                  onChange={handleFileChange}
-                />
-              </div>
-              <div>
-              <div className="text-center">
-              <button className="btn btn-primary mt-3 w-25" onClick={handleSubmit}>
-                Submit
-              </button>
-              </div>
+      <div className="row justify-content-center">
+        {/* Package Selection UI */}
+        <div className="d-flex justify-content-center my-3">
+          <div className="mt-2">Select Any Package:</div>
+          <div className="ms-3">
+            <select className="form-select" onChange={handlePackageChange}>
+              <option value="">Select Package</option>
+              <option value="kickstarter">Kickstarter: 50 USDT</option>
+              <option value="bull">Bull: 100 USDT</option>
+              <option value="whales">Whales: 500 USDT</option>
+              <option value="monthly">Monthly: 25 USDT</option>
+            </select>
+          </div>
+        </div>
 
-              </div>
-            </>
-          )}
-        </div>
-        </div>
-      )}
+        {/* Deposit Section */}
+        {selectedPackage && (
+          <div className="d-flex justify-content-center my-5">
+            <div className="card p-3 mt-3 w-50 rounded-3">
+              <h5 className="text-center">Confirm Your Deposit</h5>
+              {!showDeposit ? (
+                <div className="text-center py-4">
+                  <button className="btn btn-primary w-25" onClick={handleDepositClick}>Deposit</button>
+                </div>
+              ) : (
+                <>
+                  <div className="mt-2">
+                    <label>Deposit Address:</label>
+                    <input type="text" className="form-control" value={depositAddress} readOnly />
+                  </div>
+                  <div className="mt-3">
+                    <label>Upload Screenshot:</label>
+                    <input type="file" className="form-control" onChange={handleFileChange} />
+                  </div>
+                  <div className="text-center">
+                    <button className="btn btn-primary mt-3 w-25" onClick={handleSubmit} disabled={loading}>
+                      {loading ? "Submitting..." : "Submit"}
+                    </button>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
