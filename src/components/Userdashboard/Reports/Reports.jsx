@@ -6,11 +6,13 @@ const Reports = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const ROOT_URL = import.meta.env.VITE_LOCALHOST_URL;
+  const mySponsorId = sessionStorage.getItem("mySponsorId");
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await  axios.get(`${ROOT_URL}/order/all-orders`);
-        setOrders(response.data);
+        const response = await  axios.post(`${ROOT_URL}/user/orderhistory`,{mySponsorId});
+        console.log(response.data.orders);
+        setOrders(response.data.orders);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -43,10 +45,10 @@ const Reports = () => {
               orders.map((order, index) => (
                 <tr key={order.id}>
                   <td>{index + 1}</td>
-                  <td>{order.orderNo}</td>
-                  <td>{order.orderDate}</td>
-                  <td>{order.packageName}</td>
-                  <td>{order.packageAmount} USDT</td>
+                  <td>{order.order_details.order_no}</td>
+                  <td> {new Date(order.order_details.order_date).toLocaleDateString('en-GB')}</td>
+                  <td>{order.package_name}</td>
+                  <td>{order.order_details.order_price} USDT</td>
                   <td>{order.status}</td>
                 </tr>
               ))

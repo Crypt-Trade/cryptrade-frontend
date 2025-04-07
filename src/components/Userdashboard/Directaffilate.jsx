@@ -9,7 +9,7 @@ const Directaffilate = () => {
     const ROOT_URL = import.meta.env.VITE_LOCALHOST_URL;
   useEffect(() => {
     // Fetch referral data from the API
-    axios.post(`${ROOT_URL}/api/user/directreffers`, { sponsorId }) // replace with actual sponsorId
+    axios.post(`${ROOT_URL}/user/directreffers`, { sponsorId }) // replace with actual sponsorId
       .then(response => {
         setReferrals(response.data); // Set the referral data
         setLoading(false); // Data loading complete

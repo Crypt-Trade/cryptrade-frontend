@@ -106,8 +106,8 @@ const Home = () => {
              <div className='text-center'>
                  <img src={wfh} width={70}/>
              </div>
-             <div className=' mt-4 text-center fw-bold h5' style={{textAlign:"justify"}}>WORK FROM HOME</div>
-             <div style={{textAlign:"center"}}>Flexi Trade offers you to work from home. If you have 2-4 hours after your job then you can work with us. and earn a lot. 
+             <div className=' mt-4 text-center fw-bold h5' style={{textAlign:"justify"}}>ABOUT BLOCKCHAIN</div>
+             <div style={{textAlign:"center"}}>Blockchain is a secure, decentralized system for recording digital transactions. 
              </div>
              
              </div>
@@ -115,15 +115,15 @@ const Home = () => {
          <div className='text-center'>
                  <img src={team} width={70}/>
              </div>
-         <div className='mt-4 text-center fw-bold h5' style={{textAlign:"justify"}}>WORK IN A TEAM</div>
-         <div style={{textAlign:"center"}}> All Tr Members are working as a family. All the time they are ready to help/ support you..
+         <div className='mt-4 text-center fw-bold h5' style={{textAlign:"justify"}}>TOGETHER WE GROW</div>
+         <div style={{textAlign:"center"}}> Our team stands by you with care, guidance, and full support.
          </div></div>
          <div className='col-lg-3 aboutcard p-3'>
          <div className='text-center'>
                  <img src={appreciation} width={70}/>
              </div>
          <div className=' mt-4 text-center fw-bold h5' style={{textAlign:"justify"}}> REWARDS</div>
-         <div style={{textAlign:"center"}}>Flexi Trade offers one of the most generous rewards  programs in the direct-selling industry in World.
+         <div style={{textAlign:"center"}}>With one of the highest-paying reward structures, CrypTrade empowers its members worldwide.
          </div> </div>
         </div>
         </div>

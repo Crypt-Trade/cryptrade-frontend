@@ -29,7 +29,7 @@ const Walletdetails = () => {
     }
 
     try {
-      const response = await axios.post(`${ROOT_URL}/api/walletdetails/`, {
+      const response = await axios.post(`${ROOT_URL}/wallet/walletdetails/`, {
         userId,
         name,
         telegramId,
@@ -47,7 +47,7 @@ const Walletdetails = () => {
   useEffect(() => {
     const fetchKycStatus = async () => {
       try {
-        const response = await axios.get(`${ROOT_URL}/api/wallet-status/${userId}`)
+        const response = await axios.get(`${ROOT_URL}/wallet/wallet-status/${userId}`)
         setKycStatus(response.data.walletStatus);
       } catch (error) {
         console.error("Error fetching KYC status:", error);
@@ -152,33 +152,33 @@ const Walletdetails = () => {
       )}
 
        {kycStatus !== "not_submitted" && kycStatus !== "loading" && (
-        <div>
-          <h3>KYC Status</h3>
-          <table className="table table-light table-striped">
+        <div className="d-flex flex-column align-items-center">
+          <h3>Your Wallet Status</h3>
+          <table className="table table-light table-striped w-75 mt-4">
             <thead>
               <tr>
-              <th>Name</th>
+              <th className="text-center">Name</th>
               
-                <th>KYC Status</th>
+                <th className="text-center"> Status</th>
                 {kycStatus === "rejected" && (
-                <th>Actions</th>
+                <th className="text-center">Actions</th>
                 )}
               </tr>
             </thead>
             <tbody>
               <tr>
-              <td>{name}</td>
+              <td className="text-center">{name}</td>
               
-                <td>
+                <td className="text-center">
                   {kycStatus === "pending" && "Pending"}
                   {kycStatus === "verified" && "Verified"}
                   {kycStatus === "rejected" && "Rejected"}
                 </td>
                
                   {kycStatus === "rejected" && (
-                    <td>
+                    <td className="text-center">
                     <button className="btn btn-warning" onClick={handleResubmitClick}>
-                      Resubmit KYC
+                      Resubmit Wallet Details
                     </button>
                     </td>
                   )}

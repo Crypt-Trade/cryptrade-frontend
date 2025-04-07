@@ -14,6 +14,8 @@ const Registration = () => {
   
 const [binaryposition, setbinaryposition] = useState();
   const [showPassword, setShowPassword] = useState(false);
+  const [mobilenoerror, setmobileerror] = useState(false);
+  const [emailerror, setemailerror] = useState(false)
 
 
   const handleChange = (e) => {
@@ -27,6 +29,26 @@ const [binaryposition, setbinaryposition] = useState();
   const handleChange_radiobutton = (event) => {
     setbinaryposition(event.target.value);
   };
+
+  function mobileHandler(e) {
+    let item = e.target.value;
+    if (item.length != 10) {
+        setmobileerror(true)
+    } else {
+        setmobileerror(false)
+    }
+  }
+  function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+  }
+  function emailHandler(e) {
+    let item = e.target.value;
+    if (!isValidEmail(item)) {
+        setemailerror(true);
+    } else {
+        setemailerror(false);
+    }
+  }
   const handleSubmit = async (event) => {
     const ROOT_URL = import.meta.env.VITE_LOCALHOST_URL;
     event.preventDefault();
@@ -138,8 +160,10 @@ const [binaryposition, setbinaryposition] = useState();
               name="mobileNumber"
               value={formData.mobileNumber}
               onChange={handleChange}
+              onKeyUp={mobileHandler}
               required
             />
+            {mobilenoerror ? <span className='link-danger'>phone no invalid</span> : ""}
           </div>
 
           <div className="mb-3">
@@ -150,8 +174,10 @@ const [binaryposition, setbinaryposition] = useState();
               name="email"
               value={formData.email}
               onChange={handleChange}
+              onKeyUp={emailHandler}
               required
             />
+             {emailerror ? <span className='link-danger'>Email invalid</span> : ""}
           </div>
 
           <div className="mb-3 position-relative">
@@ -165,7 +191,7 @@ const [binaryposition, setbinaryposition] = useState();
               required
             />
             <span className="position-absolute end-0 top-50 translate-middle-y me-3" onClick={togglePassword} style={{ cursor: "pointer" }}>
-              {showPassword ? <i className="fa fa-eye-slash mt-4" style={{fontSize:"20px"}}></i> : <i className="fa fa-eye mt-4" style={{fontSize:"20px"}}></i>}
+              {showPassword ? <i className="fa fa-eye mt-4" style={{fontSize:"20px"}}></i> : <i className="fa fa-eye-slash mt-4" style={{fontSize:"20px"}}></i>}
             </span>
           </div>
 

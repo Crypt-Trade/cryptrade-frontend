@@ -14,6 +14,8 @@ const Signupright = () => {
     
     const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+    const [mobilenoerror, setmobileerror] = useState(false);
+    const [emailerror, setemailerror] = useState(false)
     const handleChange = (e) => {
       setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -21,6 +23,25 @@ const Signupright = () => {
     const togglePassword = () => {
       setShowPassword(!showPassword);
     };
+    function mobileHandler(e) {
+      let item = e.target.value;
+      if (item.length != 10) {
+          setmobileerror(true)
+      } else {
+          setmobileerror(false)
+      }
+    }
+    function isValidEmail(email) {
+      return /\S+@\S+\.\S+/.test(email);
+    }
+    function emailHandler(e) {
+      let item = e.target.value;
+      if (!isValidEmail(item)) {
+          setemailerror(true);
+      } else {
+          setemailerror(false);
+      }
+    }
     console.log(parentSponsorId);
     const handleSubmit = async (event) => {
       const ROOT_URL = import.meta.env.VITE_LOCALHOST_URL;
@@ -86,8 +107,10 @@ const Signupright = () => {
               name="mobileNumber"
               value={formData.mobileNumber}
               onChange={handleChange}
+              onKeyUp={mobileHandler}
               required
             />
+            {mobilenoerror && <span className="text-danger">Please enter a valid mobile number</span>}
           </div>
 
           <div className="mb-3">
@@ -98,8 +121,10 @@ const Signupright = () => {
               name="email"
               value={formData.email}
               onChange={handleChange}
+              onKeyUp={emailHandler}
               required
             />
+            {emailerror && <span className="text-danger">Please enter a valid email</span>}
           </div>
 
           <div className="mb-3 position-relative">
@@ -113,7 +138,7 @@ const Signupright = () => {
               required
             />
             <span className="position-absolute end-0 top-50 translate-middle-y me-3" onClick={togglePassword} style={{ cursor: "pointer" }}>
-              {showPassword ? <i className="fa fa-eye-slash mt-4" style={{fontSize:"20px"}}></i> : <i className="fa fa-eye mt-4" style={{fontSize:"20px"}}></i>}
+              {showPassword ? <i className="fa fa-eye mt-4" style={{fontSize:"20px"}}></i> : <i className="fa fa-eye-slash mt-4" style={{fontSize:"20px"}}></i>}
             </span>
           </div>
 
