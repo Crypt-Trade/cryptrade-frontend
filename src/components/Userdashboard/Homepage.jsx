@@ -7,6 +7,8 @@ const Homepage = () => {
     userDetails: {},
     walletDetails: {},
   });
+  const [current, setCurrent] = useState([]);
+  // const [currentdirect, setCurrentdirect] = useState([]);
 
   const ROOT_URL = import.meta.env.VITE_LOCALHOST_URL || "http://localhost:5000";
   const sponsorId = sessionStorage.getItem('mySponsorId') 
@@ -18,6 +20,7 @@ const Homepage = () => {
           sponsorId: sponsorId,
         });
         console.log("Dashboard Data:", response.data);
+        setCurrent(response.data);
         setData({
           userDetails: response.data.userDetails,
           walletDetails: response.data.walletDetails,
@@ -66,8 +69,7 @@ const Homepage = () => {
                 Direct Affiliate Bonus (D.A.B)
                 <i className="mdi mdi-diamond mdi-24px float-end"></i>
               </h4>
-             <h2> {walletDetails.directPoints?.leftPoints || 0} |{" "}
-        {walletDetails.directPoints?.rightPoints || 0}</h2>
+             <h2> {current.currentDirectPoints}</h2>
               {/* <h2 className="mb-5">{walletDetails || 0}</h2> */}
             </div>
           </div>
@@ -82,6 +84,7 @@ const Homepage = () => {
                 Team Affiliate Bonus
                 <i className="mdi mdi-chart-line mdi-24px float-end"></i>
               </h4>
+              <h2>{current.currentTeamPoints}</h2>
               {/* <h2 className="mb-5">{walletDetails.currentWeekPoints.leftPoints || 0}| {walletDetails.currentWeekPoints.rightPoints || 0}</h2> */}
             </div>
           </div>

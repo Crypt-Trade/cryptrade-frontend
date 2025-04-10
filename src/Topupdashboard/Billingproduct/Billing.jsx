@@ -55,7 +55,7 @@ const submitwithoutOrder = async () => {
      package_name: package_name,
       order_price: order_price
     });
-    alert(response.data.message);
+    // alert(response.data.message);
     swal("yeah!", response.data.message, "success");
     setCart([]);
     setSponsorId("");
