@@ -178,7 +178,7 @@ const Walletdetails = () => {
                   {kycStatus === "rejected" && (
                     <td className="text-center">
                     <button className="btn btn-warning" onClick={handleResubmitClick}>
-                      Resubmit Wallet Details
+                      Resubmit
                     </button>
                     </td>
                   )}

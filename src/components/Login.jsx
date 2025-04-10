@@ -72,7 +72,7 @@ const Login = () => {
                   <label htmlFor="userId" className="form-label">User ID</label>
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control p-2"
                     id="userId"
                     value={sponsorId}
                     onChange={(e) => setSponsorId(e.target.value)}
@@ -82,7 +82,7 @@ const Login = () => {
                   <label htmlFor="password" className="form-label">Password</label>
                   <input
                     type="password"
-                    className="form-control"
+                    className="form-control p-2"
                     id="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}

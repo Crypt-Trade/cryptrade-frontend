@@ -123,7 +123,7 @@ const Home = () => {
                  <img src={appreciation} width={70}/>
              </div>
          <div className=' mt-4 text-center fw-bold h5' style={{textAlign:"justify"}}> REWARDS</div>
-         <div style={{textAlign:"center"}}>With one of the highest-paying reward structures, CrypTrade empowers its members worldwide.
+         <div style={{textAlign:"center"}}>
          </div> </div>
         </div>
         </div>
@@ -196,14 +196,25 @@ const Home = () => {
                      </div>
                      <h1 className='about mt-3 text-center'>- CONTACT US -</h1>
                      <div className='row'>
-                       <div className='col-lg-6 mt-5'>
-                         <div className='card formcontact'>
+                     <div className='col-lg-12 text-center mt-5'>
+                         <div className=''>
+                           {/* <h3 className='text-center'>- GET IN TOUCH -</h3> */}
+                           <div className='d-flex mt-3 justify-content-center'>
+                             <img src={facebook} width={40} className='ms-5' alt="Facebook" />
+                             <img src={twitter} width={40} className='ms-5' alt="Twitter" />
+                             <img src={inta} width={40} className='ms-5' alt="Instagram" />
+                           </div>
+                         </div>
+                       </div>
+                       <div className='col-lg-12 mt-5'>
+                       <div className='d-flex justify-content-center'>
+                         <div className='card formcontact w-50'>
                            <form className='p-3' onSubmit={handleSubmit}>
                              <div className="mb-3">
                                <label htmlFor="name" className="form-label">Name</label>
                                <input
                                  type="text"
-                                 className="form-control"
+                                 className="form-control p-2"
                                  id="name"
                                  name="name"
                                  value={formData.name}
@@ -215,7 +226,7 @@ const Home = () => {
                                <label htmlFor="phoneNo" className="form-label">Phone number</label>
                                <input
                                  type="tel"
-                                 className="form-control"
+                                 className="form-control p-2"
                                  id="phoneNo"
                                  name="phoneNo"
                                  value={formData.phoneNo}
@@ -227,7 +238,7 @@ const Home = () => {
                                <label htmlFor="email" className="form-label">Email</label>
                                <input
                                  type="email"
-                                 className="form-control"
+                                 className="form-control p-2"
                                  id="email"
                                  name="email"
                                  value={formData.email}
@@ -238,7 +249,7 @@ const Home = () => {
                              <div className="mb-3">
                                <label htmlFor="message" className="form-label">Message</label>
                                <textarea
-                                 className="form-control"
+                                 className="form-control p-2"
                                  id="message"
                                  name="message"
                                  rows="3"
@@ -247,21 +258,15 @@ const Home = () => {
                                  required
                                ></textarea>
                              </div>
-                             <button type="submit" className="btn btn-primary">Submit</button>
+                             <div className='text-center'>
+                             <button type="submit" className="  btn btn-primary btn-lg w-50">Submit</button>
+                             </div>
                              {status && <p className="mt-3 text-info">{status}</p>}
                            </form>
                          </div>
                        </div>
-                       <div className='col-lg-6 text-center mt-5'>
-                         <div className='geincontact'>
-                           <h3 className='text-center'>- GET IN TOUCH -</h3>
-                           <div className='d-flex mt-3 justify-content-center'>
-                             <img src={facebook} width={40} className='ms-5' alt="Facebook" />
-                             <img src={twitter} width={40} className='ms-5' alt="Twitter" />
-                             <img src={inta} width={40} className='ms-5' alt="Instagram" />
-                           </div>
-                         </div>
                        </div>
+                       
                      </div>
                    </div>
      {/* <Contact /> */}

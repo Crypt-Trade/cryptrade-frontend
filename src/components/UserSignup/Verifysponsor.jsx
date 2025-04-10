@@ -71,13 +71,13 @@ const Verifysponsor = () => {
 
                           <label className="mb-1 mt-3" htmlFor="exampleInputEmail1" style={{fontSize:"15px"}}>SponsorID</label>
                           <div className='d-flex'>
-                          <input type="text" className="form-control w-75" id="id" name='id'  placeholder="Entersponsorid" onChange={e => setSponsorid(e.target.value)} />
+                          <input type="text" className="form-control w-75 p-2" id="id" name='id'  placeholder="Entersponsorid" onChange={e => setSponsorid(e.target.value)} />
                           <button className='btn btn-primary ms-4 w-25' onClick={handleverify}>Verify</button>
                           </div>
                         </div>
                         <div className="form-group mb-4">
                           <label className="mb-1" htmlFor="exampleInputEmail1">Sponsor Name</label>
-                          <input type="text" className="form-control " id="name" name='name' readOnly
+                          <input type="text" className="form-control p-2 " id="name" name='name' readOnly
                             placeholder="Enter Your Name" value={name} />
                         </div>
                         
@@ -91,7 +91,7 @@ const Verifysponsor = () => {
                         <div className='col-md-6'>
                           </div>
                           <div className='col-md-6 text-end'>
-                          <span className="mb-5 pb-lg-2 pb-sm-2"> have an account? <a className="text-success text-decoration-none" href="/usersignup/verifysponsor"
+                          <span className="mb-5 pb-lg-2 pb-sm-2"> have an account? <a className="text-success text-decoration-none" href="/login"
                           >Login</a></span>
                           </div>
                         </div>
