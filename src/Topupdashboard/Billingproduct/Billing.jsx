@@ -47,6 +47,8 @@ const Billing = () => {
     { productId: 1, name: "Kick Starter", price: 50 },
     { productId: 2, name: "Bull Starter", price: 100 },
     { productId: 3, name: "Whales Starter", price: 500 },
+    { productId: 4, name: "Monthly subscription", price:25 },
+   
   ];
 
   return (
@@ -54,16 +56,16 @@ const Billing = () => {
       <div className="row">
         <div className="col-lg-8 ">
           <div className="container">
-            <div className="row justify-content-center">
+            <div className="row text-align-center">
               {products.map((product) => (
                 <div className="col-md-4 my-4" key={product.productId}>
                   <div className="card">
                     <div className="card-body">
                       <h5>{product.name}</h5>
                       <div className="fw-bold h5">Price: {product.price} USDT</div>
-                      <div className="d-flex justify-content-center mt-5">
+                      <div className="d-flex justify-content-center mt-5 text-center">
                         <button
-                          className="btn btn-primary"
+                          className="btn btn-primary text-center"
                           onClick={() => addToCart(product)}
                         >
                           Add to cart
