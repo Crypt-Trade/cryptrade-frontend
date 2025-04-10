@@ -32,7 +32,7 @@ const Billing = () => {
         order_no: orderNo,
         order_price: order_price,
       });
-      alert(response.data.message);
+      // alert(response.data.message);
       swal("yeah!", response.data.message, "success");
       setCart([]);
       setSponsorId("");
@@ -42,6 +42,29 @@ const Billing = () => {
       alert("Failed to submit order.");
     }
   };
+const submitwithoutOrder = async () => {
+  if (!sponsorId || cart.length === 0) {
+    swal("Opps!", "Please fill all fields and add items to cart.", "error");
+    return;
+  }
+  const order_price = cart.reduce((acc, item) => acc + item.price, 0);
+  const package_name = cart[0].name;
+  try {
+    const response = await axios.post(`${ROOT_URL}/order/update-status-without-orderno`, {
+      mySponsorId: sponsorId,
+     package_name: package_name,
+      order_price: order_price
+    });
+    alert(response.data.message);
+    swal("yeah!", response.data.message, "success");
+    setCart([]);
+    setSponsorId("");
+    setOrderNo("");
+  } catch (error) {
+    console.error("Error submitting order:", error);
+    alert("Failed to submit order.");
+  }
+};
 
   const products = [
     { productId: 1, name: "Kick Starter", price: 50 },
@@ -127,7 +150,48 @@ const Billing = () => {
                 </button>
               </div>
             </div>
+            <div className="h5 text-center mt-3 fw-bold">Without Order Number</div>
+            <div>
+            <input 
+              type="text" 
+              className="form-control p-2 mb-2 w-100" 
+              placeholder="Enter Sponsor ID..." 
+              value={sponsorId} 
+              onChange={(e) => setSponsorId(e.target.value)} 
+            />
+             <div className="pos-sidebar-body tab-content"> 
+              {cart.length > 0 ? (
+                <ul>
+                  {cart.map((item) => (
+                    <div className="card" key={item.productId}>
+                      <div className="card-body">
+                        <span>{item.name} - {item.price} USDT</span>
+                      </div>
+                    </div>
+                  ))}
+                </ul>
+              ) : (
+                <p>No items in cart</p>
+              )}
+            </div>
+            <div className="pos-sidebar-footer">
+              <div className="mt-3 d-flex justify-content-between align-items-center">
+                <h6 style={{ color: "#095444" }} className="text-start">
+                  Total price: {cart.reduce((acc, item) => acc + item.price, 0)} USDT
+                </h6>
+                <button 
+                  type="submit" 
+                  className="btn btn-primary" 
+                  onClick={submitwithoutOrder}
+                >
+                  Submit Order
+                </button>
+              </div>
+            </div>
+            </div>
+
           </div>
+          
         </div>
       </div>
     </>
