@@ -55,7 +55,8 @@ const [loading, setLoading] = useState(false);
         uniqueKey
       });
 
-      alert(response.data.message);
+      // alert(response.data.message);
+      swal('Success!', response.data.message, 'success');
       setShowModal(false);
       setWithdrawAmount('');
       setUniqueKey('');
