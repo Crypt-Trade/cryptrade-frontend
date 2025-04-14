@@ -160,7 +160,7 @@ const Homepage = () => {
                 
               </h4>
               <div className="d-flex">
-              <span className="h5 mb-5">{userDetails.leftRefferalLink}</span>
+              <div className="h5 mb-5 leftlink">{userDetails.leftRefferalLink}</div>
               {/* <span>hii</span> */}
               </div>
               
@@ -169,14 +169,14 @@ const Homepage = () => {
               </div>
           </div>
         </div>
-        <div className="col-md-6 stretch-card grid-margin">
+        <div className="col-md-6 col-sm-12 stretch-card grid-margin">
           <div className="card card-img-holder text-white h-75 usercard1">
             <div className="card-body">
               <h4 className="font-weight-normal mb-3">
               Right Link
               </h4>
               <div className="d-flex">
-              <span className="h5 mb-5">{userDetails.rightRefferalLink}</span>
+              <div className="h5 mb-5 rightlink">{userDetails.rightRefferalLink}</div>
               {/* <span>hii</span> */}
               </div>
            

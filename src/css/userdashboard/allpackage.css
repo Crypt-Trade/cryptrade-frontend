@@ -6,3 +6,8 @@
     font-size: 19px;
     font-weight: 500;
 }
+@media (min-width: 768px) {
+    .select_package{
+        width: 25%;
+    }
+}

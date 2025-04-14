@@ -2,13 +2,32 @@ import React, {useState}from 'react'
 import "../../../css/userdashboard/usernavbar.css"
 import  logo from "../../../assets/images/crypto.png";
 const Usernavbar = () => {
-   
+    const [isOpen, setIsOpen] = useState(false);
+    // const handle_logout = () => {
+    //     sessionStorage.removeItem('mySponsorId');
+    //     sessionStorage.removeItem('username');
+    //     sessionStorage.removeItem('wallet_Balance');
+    //     window.location.href = '/';
+    //   }
 
   return (
     <>
-   <div className="text-white vh-100 " style={{backgroundColor:"#004d93"}}>
-      <a className="navbar-brand ms-3" href="/">
-        <img src={logo} className="logo-img" alt="Logo" />
+    <button
+        className="btn btn-light d-md-none m-2"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        ☰
+      </button>
+      <div className={`sidebar text-white vh-100 ${isOpen ? 'open' : ''}`} style={{ backgroundColor: "#004d93" }}>
+      <div className="d-flex justify-content-end align-items-center p-3 d-md-none">
+          {/* <img src={logo} className="logo-img" alt="Logo" /> */}
+          <button className="btn btn-sm btn-light" onClick={() => setIsOpen(false)}>
+            ✖
+          </button>
+        </div>
+   
+      <a className="navbar-brand ms-3 text-center" href="/">
+        <img src={logo} className="logo-img text-center" width={200} alt="Logo" />
       </a>
 
       <ul className="list-unstyled p-3">
@@ -67,7 +86,13 @@ const Usernavbar = () => {
             <div>💲</div>
             <span className="font-weight-normal ms-3">Weekly payout</span>
         </div></a></li>
-        
+        {/* <li className='mt-2'>
+        <div className="col-lg-2 text-center">
+         
+         <button className="btn btn-primary ms-auto btn-lg w-100" onClick={handle_logout}>Logout</button>
+       
+     </div>
+     </li> */}
        
         
       </ul>

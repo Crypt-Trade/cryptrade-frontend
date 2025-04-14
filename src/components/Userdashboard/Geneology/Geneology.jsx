@@ -231,7 +231,7 @@ const Genealogy = () => {
   return (
     <>
     <div>
-    <form onSubmit={handleSearch}>
+    {/* <form onSubmit={handleSearch}>
     <div className="input-group mb-3 mt-2" style={{maxWidth:"500px"}}>
   <input type="text" className="form-control p-3" placeholder="Search with Sponsor ID..." aria-label="Search" aria-describedby="search-button" onChange={e => setsponsorid(e.target.value)}/>
   <button className="btn btn-primary" type="submit" style={{backgroundColor:"#0071a8"}} id="search-button" value={sponsorid}
@@ -239,7 +239,7 @@ const Genealogy = () => {
     <i className="fa fa-search text-white"></i>
   </button>
 </div>
-</form>
+</form> */}
     </div>
       <div className="flex flex-column">
       <div className="row">

@@ -10,7 +10,7 @@ const Allpackages = () => {
   const [showDeposit, setShowDeposit] = useState(false);
   const [screenshot, setScreenshot] = useState(null);
   const [loading, setLoading] = useState(false);
-  const depositAddress = "0x1234567890abcdef1234567890abcdef12345678";
+  const depositAddress = "0x294eec3361ca7cd1cd9638bf6403cb7fd420aed9";
   const useId = sessionStorage.getItem('mySponsorId');
   const userobject_id = sessionStorage.getItem('userid');
   const user_name = sessionStorage.getItem('username');
@@ -65,8 +65,9 @@ const Allpackages = () => {
    
       <div className="row justify-content-center">
         {/* Kick Starter Package */}
-        <div className="col-md-3 my-4">
-          <div className="card cardpackage h-100">
+        <div className="col-md-3 my-4 ">
+        <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 h-100 rounded-3">
+
             <div className="card-body d-flex flex-column">
               <h3 className="text-center fw-bold">Kick Starter</h3>
               <div className="fw-bold h5 text-center">50 USDT</div>
@@ -82,7 +83,8 @@ const Allpackages = () => {
 
         {/* Bull Starter Package */}
         <div className="col-md-3 my-4">
-          <div className="card cardpackage h-100">
+        <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 rounded-3 h-100">
+
             <div className="card-body d-flex flex-column">
               <h3 className="text-center fw-bold">Bull Starter</h3>
               <div className="fw-bold h5 text-center">100 USDT</div>
@@ -101,7 +103,7 @@ const Allpackages = () => {
 
         {/* Whales Starter Package */}
         <div className="col-md-3 my-4">
-          <div className="card cardpackage h-100">
+        <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 rounded-3 h-100">
             <div className="card-body d-flex flex-column">
               <h3 className="text-center fw-bold">Whales Starter</h3>
               <div className="fw-bold h5 text-center">500 USDT</div>
@@ -123,7 +125,7 @@ const Allpackages = () => {
 
         {/* Monthly Subscription (Add-On) */}
         <div className="col-md-3 my-4">
-          <div className="card cardpackage h-100">
+        <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 rounded-3 h-100">
             <div className="card-body d-flex flex-column">
               <h5 className="text-center fw-bold">Monthly subscription</h5>
               <h5 className="text-center fw-bold">(Add On)</h5>
@@ -137,18 +139,19 @@ const Allpackages = () => {
       </div>
       <div className="row justify-content-center">
         {/* Package Selection UI */}
-        <div className="d-flex justify-content-center my-3">
-          <div className="mt-2">Select Any Package:</div>
-          <div className="ms-3">
-            <select className="form-select" onChange={handlePackageChange}>
-              <option value="">Select Package</option>
-              <option value="kickstarter">Kickstarter: 50 USDT</option>
-              <option value="bull">Bull: 100 USDT</option>
-              <option value="whales">Whales: 500 USDT</option>
-              <option value="monthly">Monthly: 25 USDT</option>
-            </select>
-          </div>
-        </div>
+        <div className="d-flex flex-column flex-md-row justify-content-center align-items-center align-items-md-center my-3 gap-2">
+  <div className="mt-2 text-center text-md-center fw-bold">Select Any Package:</div>
+  <div className=" select_package">
+    <select className="form-select" onChange={handlePackageChange}>
+      <option className="option_package" value="">Select Package</option>
+      <option className="option_package" value="kickstarter">Kickstarter: 50 USDT</option>
+      <option className="option_package" value="bull">Bull: 100 USDT</option>
+      <option className="option_package" value="whales">Whales: 500 USDT</option>
+      <option className="option_package" value="monthly">Monthly: 25 USDT</option>
+    </select>
+  </div>
+</div>
+
 
         {/* Deposit Section */}
         {selectedPackage && (
@@ -157,7 +160,7 @@ const Allpackages = () => {
               <h5 className="text-center">Confirm Your Deposit</h5>
               {!showDeposit ? (
                 <div className="text-center py-4">
-                  <button className="btn btn-primary w-25" onClick={handleDepositClick}>Deposit</button>
+                  <button className="btn btn-primary w-50" onClick={handleDepositClick}>Deposit</button>
                 </div>
               ) : (
                 <>
