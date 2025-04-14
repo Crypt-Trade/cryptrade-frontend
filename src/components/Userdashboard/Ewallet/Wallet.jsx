@@ -11,19 +11,33 @@ const [showPassword, setShowPassword] = useState(false);
 const [showPassword2, setShowPassword2] = useState(false);
 const sponsorId = sessionStorage.getItem('mySponsorId');
 const ROOT_URL = import.meta.env.VITE_LOCALHOST_URL;
+  const [userwithdrawOrders, setUserwithdrawOrders] = useState([]);
 const [loading, setLoading] = useState(false);
   // Simulate API call to get wallet balance
   useEffect(() => {
     // Replace with real API call
     fetchWalletBalance();
+    getAllWithdrawalOrders();
   }, []);
 
   const fetchWalletBalance = async () => {
     // Simulating API response
-    const balanceFromApi = 12345; // replace this with actual fetch
+    const balanceFromApi = sessionStorage.getItem("wallet_Balance"); // replace this with actual fetch
     setWalletBalance(balanceFromApi);
   };
+  const getAllWithdrawalOrders = async () => {
+    try {
+      const response = await axios.post(`${ROOT_URL}/user/get-walletorders-byid`, {
+        sponsorId
+      });
+      console.log(response.data);
+      setUserwithdrawOrders(response.data.withdrawalOrders);
 
+    } catch (error) {
+      console.error(error);
+      // swal('Oops!', error.response?.data?.message || 'Something went wrong.', 'error');
+    }
+  }
   const handleWithdrawClick = () => {
     setShowModal(true);
   };
@@ -66,7 +80,7 @@ const [loading, setLoading] = useState(false);
       // alert(error.response?.data?.message || 'Something went wrong.');
       swal('Oops!', error.response?.data?.message || 'Something went wrong.', 'error');
     } finally {
-      setLoading(false);k
+      setLoading(false);
     }
   };
   return (
@@ -95,13 +109,13 @@ const [loading, setLoading] = useState(false);
                 <h4 className="font-weight-normal mb-3 text-center">
                   Wallet address
                 </h4>
-                <div className='h4 text-center'>example</div>
+                <div className='h4 text-center'>None</div>
               </div>
             </div>
           </div>
         </div>
 
-        <h3 className="my-3 text-center">Withdrawal history</h3>
+        {/* <h3 className="my-3 text-center">Withdrawal history</h3>
         <table className="table table-bordered text-center">
           <thead className="table-success">
             <tr>
@@ -119,7 +133,7 @@ const [loading, setLoading] = useState(false);
               <td>Pending</td>
             </tr>
           </tbody>
-        </table>
+        </table> */}
       </div>
 
       {/* Modal */}

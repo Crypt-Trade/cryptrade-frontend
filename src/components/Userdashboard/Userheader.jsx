@@ -3,6 +3,13 @@ import React from "react";
 const Userheader = () => {
   const useId = sessionStorage.getItem('mySponsorId');
   const username = sessionStorage.getItem('username');
+
+  const handle_logout = () => {
+    sessionStorage.removeItem('mySponsorId');
+    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('wallet_Balance');
+    window.location.href = '/';
+  }
   return (
     <header className=" p-3 text-center">
       <div className="row">
@@ -14,10 +21,9 @@ const Userheader = () => {
         </div>
         {/* Logout Button (Aligned to Right) */}
         <div className="col-lg-2 text-end">
-          <a href="/">
-            {" "}
+         
             <button className="btn btn-primary ms-auto btn-lg">Logout</button>
-          </a>
+          
         </div>
       </div>
     </header>
