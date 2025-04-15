@@ -197,9 +197,11 @@ const Home = () => {
                          <div className=''>
                            {/* <h3 className='text-center'>- GET IN TOUCH -</h3> */}
                            <div className='d-flex mt-3 justify-content-center'>
+                           <div>
                              <img src={facebook} width={40} className='ms-5' alt="Facebook" />
                              <img src={twitter} width={40} className='ms-5' alt="Twitter" />
                              <img src={inta} width={40} className='ms-5' alt="Instagram" />
+                           </div>
                            </div>
                          </div>
                        </div>

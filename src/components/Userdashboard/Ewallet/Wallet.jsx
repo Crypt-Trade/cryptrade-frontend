@@ -10,14 +10,18 @@ const Wallet = () => {
 const [showPassword, setShowPassword] = useState(false);
 const [showPassword2, setShowPassword2] = useState(false);
 const sponsorId = sessionStorage.getItem('mySponsorId');
+const userId = sessionStorage.getItem('mySponsorId');
 const ROOT_URL = import.meta.env.VITE_LOCALHOST_URL;
   const [userwithdrawOrders, setUserwithdrawOrders] = useState([]);
+  const [walletaddress, setWalletAddress] = useState('');
 const [loading, setLoading] = useState(false);
+
   // Simulate API call to get wallet balance
   useEffect(() => {
     // Replace with real API call
     fetchWalletBalance();
-    getAllWithdrawalOrders();
+    // getAllWithdrawalOrders();
+    getwalletaddress();
   }, []);
 
   const fetchWalletBalance = async () => {
@@ -38,6 +42,21 @@ const [loading, setLoading] = useState(false);
       // swal('Oops!', error.response?.data?.message || 'Something went wrong.', 'error');
     }
   }
+  const getwalletaddress = async () => {
+    try {
+      const response = await axios.post(`${ROOT_URL}/user/get-wallet-address`, {
+        userId
+      });
+      console.log(response.data);
+      setWalletAddress(response.data.walletAddress);
+
+    } catch (error) {
+      console.error(error);
+      // swal('Oops!', error.response?.data?.message || 'Something went wrong.', 'error');
+    }
+  }
+    
+  
   const handleWithdrawClick = () => {
     setShowModal(true);
   };
@@ -99,7 +118,7 @@ const [loading, setLoading] = useState(false);
                 <h4 className="font-weight-normal mb-3 text-center">
                   Wallet balance
                 </h4>
-                <div className='h4 text-center'>{walletBalance}</div>
+                <div className='h5 text-center'>{walletBalance}</div>
               </div>
             </div>
           </div>
@@ -109,31 +128,38 @@ const [loading, setLoading] = useState(false);
                 <h4 className="font-weight-normal mb-3 text-center">
                   Wallet address
                 </h4>
-                <div className='h4 text-center'>None</div>
+                <div className='h5 text-center'>{walletaddress}</div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* <h3 className="my-3 text-center">Withdrawal history</h3>
+        <h3 className="my-3 text-center">Withdrawal history</h3>
         <table className="table table-bordered text-center">
           <thead className="table-success">
             <tr>
               <th>S/N</th>
-              <th>Wallet name</th>
               <th>Amount</th>
               <th>Wallet status</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>test</td>
-              <td>example123</td>
-              <td>Pending</td>
-            </tr>
-          </tbody>
-        </table> */}
+  {userwithdrawOrders.length > 0 ? (
+    userwithdrawOrders.map((order, index) => (
+      <tr key={order._id || index}>
+        <td>{index + 1}</td>
+        <td>{order.walletName || 'N/A'}</td>
+        <td>{order.amount}</td>
+        <td>{order.status}</td>
+      </tr>
+    ))
+  ) : (
+    <tr>
+      <td colSpan="4">No withdrawal history found.</td>
+    </tr>
+  )}
+</tbody>
+        </table>
       </div>
 
       {/* Modal */}

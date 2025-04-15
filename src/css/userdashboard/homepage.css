@@ -4,8 +4,16 @@
     border-radius: 18px;
 }
 .leftlink{
-    font-size: 14px;
+    font-size: 19px;
 }
 .rightlink{
-    font-size: 13px;
+    font-size: 19px;
 }
+@media (max-width: 576px) {
+    .rightlink{
+        font-size: 12px;
+    }
+    .leftlink{
+        font-size: 12px;
+    }
+  }

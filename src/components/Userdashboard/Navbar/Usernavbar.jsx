@@ -3,12 +3,7 @@ import "../../../css/userdashboard/usernavbar.css"
 import  logo from "../../../assets/images/crypto.png";
 const Usernavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    // const handle_logout = () => {
-    //     sessionStorage.removeItem('mySponsorId');
-    //     sessionStorage.removeItem('username');
-    //     sessionStorage.removeItem('wallet_Balance');
-    //     window.location.href = '/';
-    //   }
+  
 
   return (
     <>
@@ -18,7 +13,7 @@ const Usernavbar = () => {
       >
         ☰
       </button>
-      <div className={`sidebar text-white vh-100 ${isOpen ? 'open' : ''}`} style={{ backgroundColor: "#004d93" }}>
+      <div className={`sidebar text-white  ${isOpen ? 'open' : ''}`} style={{ backgroundColor: "#004d93", minHeight: "150vh" }}>
       <div className="d-flex justify-content-end align-items-center p-3 d-md-none">
           {/* <img src={logo} className="logo-img" alt="Logo" /> */}
           <button className="btn btn-sm btn-light" onClick={() => setIsOpen(false)}>
@@ -27,7 +22,7 @@ const Usernavbar = () => {
         </div>
    
       <a className="navbar-brand ms-3 text-center" href="/">
-        <img src={logo} className="logo-img text-center" width={200} alt="Logo" />
+        <img src={logo} className="logo-img text-center" width={150} alt="Logo" />
       </a>
 
       <ul className="list-unstyled p-3">

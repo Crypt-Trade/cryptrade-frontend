@@ -22,7 +22,7 @@ const Userheader = () => {
         {/* Logout Button (Aligned to Right) */}
         <div className="col-lg-2 text-end">
          
-        <button className="btn btn-primary ms-auto btn-lg w-100" onClick={handle_logout}>Logout</button>
+        <button className="btn btn-primary ms-auto btn-lg" onClick={handle_logout}>Logout</button>
         </div>
       </div>
     </header>

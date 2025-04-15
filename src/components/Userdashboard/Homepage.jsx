@@ -8,6 +8,10 @@ const Homepage = () => {
     walletDetails: {},
   });
   const [current, setCurrent] = useState([]);
+  const [referralleftLink, setReferralleftLink] = useState([]);
+  const [referralrightLink, setReferralrightLink] = useState([]);
+  const [copiedleft, setCopied] = useState(false);
+  const [copiedright , setCopiedright] = useState(false);
   // const [currentdirect, setCurrentdirect] = useState([]);
 
   const ROOT_URL = import.meta.env.VITE_LOCALHOST_URL || "http://localhost:5000";
@@ -26,6 +30,8 @@ const Homepage = () => {
           userDetails: response.data.userDetails,
           walletDetails: response.data.walletDetails,
         });
+        setReferralleftLink(response.data.userDetails.leftRefferalLink);
+        setReferralrightLink(response.data.userDetails.rightRefferalLink);
         let walletBalance = response.data.walletDetails.walletBalance;
         sessionStorage.setItem('wallet_Balance', walletBalance);
       
@@ -36,6 +42,39 @@ const Homepage = () => {
 
     fetchDashboardData();
   }, []);
+  const handleCopyLinkleft = () => {
+    if (referralleftLink) {
+      navigator.clipboard
+        .writeText(referralleftLink)
+        .then(() => {
+          setCopied(true); // Set copied to true
+          setTimeout(() => setCopied(false), 4000);
+          // alert('Referral link and code copied to clipboard!');
+        })
+        .catch((error) => {
+          console.error("Error copying referral link and code:", error);
+        });
+    } else {
+      console.error("No referral link to copy");
+    }
+  };
+
+  const handleCopyLinkright = () => {
+    if (referralrightLink) {
+      navigator.clipboard
+        .writeText(referralrightLink)
+        .then(() => {
+          setCopiedright(true); // Set copied to true
+          setTimeout(() => setCopiedright(false), 4000);
+          // alert('Referral link and code copied to clipboard!');
+        })
+        .catch((error) => {
+          console.error("Error copying referral link and code:", error);
+        });
+    } else {
+      console.error("No referral link to copy");
+    }
+  };
 
   const { userDetails, walletDetails } = data;
 
@@ -160,8 +199,10 @@ const Homepage = () => {
                 
               </h4>
               <div className="d-flex">
-              <div className="h5 mb-5 leftlink">{userDetails.leftRefferalLink}</div>
-              {/* <span>hii</span> */}
+              <div className="h3 mb-5 leftlink">{userDetails.leftRefferalLink}</div>
+              {
+                    copiedleft ? <span className="ms-2 text-white">Copied!</span> : <i className="fa fa-copy ms-2" onClick={handleCopyLinkleft}></i>
+                  }
               </div>
               
              
@@ -176,8 +217,10 @@ const Homepage = () => {
               Right Link
               </h4>
               <div className="d-flex">
-              <div className="h5 mb-5 rightlink">{userDetails.rightRefferalLink}</div>
-              {/* <span>hii</span> */}
+              <div className="h6 mb-5 rightlink">{userDetails.rightRefferalLink}</div>
+              {
+                  copiedright ? <span className="ms-2 text-white">Copied! </span> : <i className="fa fa-copy ms-2" onClick={handleCopyLinkright}></i>
+                }
               </div>
            
               </div>
