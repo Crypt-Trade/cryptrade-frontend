@@ -123,7 +123,7 @@ const Home = () => {
                  <img src={appreciation} width={70}/>
              </div>
          <div className=' mt-4 text-center fw-bold h5' style={{textAlign:"justify"}}> REWARDS</div>
-         <div style={{textAlign:"center"}}>
+         <div style={{textAlign:"center"}}>It delivers a powerful rewards program, offering traders exceptional benefits and earning potential across the globe.
          </div> </div>
         </div>
         </div>
