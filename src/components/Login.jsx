@@ -64,7 +64,7 @@ const Login = () => {
             {/* Logo */}
             <img src={logo} style={{width:"230px"}} alt="Crypto Logo" className="logo-img mb-3 logoimage" />
             {/* Login Card */}
-            <div className="card w-50 logincard">
+            <div className="card logincard  w-75" style={{ maxWidth: '720px' }}>
             <h3></h3>
               <form className="p-3" onSubmit={handleSubmit}>
                <div className='fw-bold text-center loginhere h3'>Login here</div>
@@ -89,9 +89,9 @@ const Login = () => {
                   />
                 </div>
                 <div className="text-center">
-                  <button type="submit" className="btn btn-primary">Submit</button>
+                  <button type="submit" className="btn btn-primary w-50">Submit</button>
                 </div>
-                <div className="row">
+                <div className="row mt-3">
                         <div className='col-md-6'>
                           </div>
                           <div className='col-md-6 text-end'>

@@ -41,7 +41,12 @@
   
   .text-container h1 {
     color: white;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     /* border: 3px solid white; */
+  }
+  @media (max-width: 576px) {
+    .text-container h1 {
+      font-size: 2rem;
+    }
   }

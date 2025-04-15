@@ -102,23 +102,22 @@ const Home = () => {
            </div>
      
           <div className='row aboutrow d-flex justify-content-center'>
-         <div className='col-md-3 aboutcard ms-1 p-3'>
+          <div className='col-12 col-md-6 col-lg-3 aboutcard mb-4 p-3'>
              <div className='text-center'>
                  <img src={wfh} width={70}/>
              </div>
              <div className=' mt-4 text-center fw-bold h5' style={{textAlign:"justify"}}>ABOUT BLOCKCHAIN</div>
              <div style={{textAlign:"center"}}>Blockchain is a secure, decentralized system for recording digital transactions. 
+             </div> 
              </div>
-             
-             </div>
-         <div className='col-lg-3 aboutcard ms-1 p-3'>
+             <div className='col-12 col-md-6 col-lg-3 aboutcard mb-4 p-3'>
          <div className='text-center'>
                  <img src={team} width={70}/>
              </div>
          <div className='mt-4 text-center fw-bold h5' style={{textAlign:"justify"}}>TOGETHER WE GROW</div>
          <div style={{textAlign:"center"}}> Our team stands by you with care, guidance, and full support.
          </div></div>
-         <div className='col-lg-3 aboutcard p-3'>
+         <div className='col-12 col-md-6 col-lg-3 aboutcard mb-4 p-3'>
          <div className='text-center'>
                  <img src={appreciation} width={70}/>
              </div>
@@ -141,7 +140,6 @@ const Home = () => {
             <p className="card-text">Advanced cryptography involves secure algorithms, protocols, and cryptanalysis techniques to protect data, ensure privacy, and enable decentralized security solutions.</p>
           </div>
         </div>
-
         {/* Card 2 */}
         <div className="col-md-4">
           <div className="card p-3 text-center shadow servicecard">
@@ -190,7 +188,6 @@ const Home = () => {
      <div className='pt-5'>
      <div className='container my-4' id='contactcontainer'>
                 
-                
                      <div className='text-center'>
                        <img src={tele} width={80} alt="Telephone Icon" />
                      </div>
@@ -206,10 +203,10 @@ const Home = () => {
                            </div>
                          </div>
                        </div>
-                       <div className='col-lg-12 mt-5'>
+                       <div className='col-lg-12  mt-5'>
                        <div className='d-flex justify-content-center'>
-                         <div className='card formcontact w-50'>
-                           <form className='p-3' onSubmit={handleSubmit}>
+                         <div className='card formcontact w-75' style={{ maxWidth: '720px' }}>
+                           <form className='p-4' onSubmit={handleSubmit}>
                              <div className="mb-3">
                                <label htmlFor="name" className="form-label">Name</label>
                                <input
