@@ -29,6 +29,7 @@ const Customersubcription = () => {
               <th className='text-center' scope="col">Order Amount</th>
               <th className='text-center' scope="col">User ID</th>
               <th className='text-center' scope="col">User Name</th>
+              <th className='text-center' scope='col'>Order date</th>
               <th className='text-center'>Screenshot of order</th>
               <th className='text-center' scope="col">Order Status</th>
 
@@ -42,7 +43,8 @@ const Customersubcription = () => {
                 <td className='text-center'>${item.order_details.order_price}</td>
                 <td className='text-center'>{item.user_details.user_mySponsor_id}</td>
                 <td className='text-center'>{item.user_details.user_name}</td>
-                <td className='text-center'><img src={item.image_url} width={150}/></td>
+                <td className='text-center'>{new Date(item.order_details.order_date).toISOString().split("T")[0].replace(/-/g, "/")}</td>
+                <td className='text-center'><img src={item.image_url} width={150} alt='No image'/></td>
                 <td className='text-center'>{item.status}</td>
                 
               </tr>

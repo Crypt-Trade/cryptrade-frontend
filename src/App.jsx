@@ -55,6 +55,8 @@ function App() {
       <Route path='/topupdashboard/billing' element={<Topupdashboardlayout><Billing /></Topupdashboardlayout>} />
     
       <Route path='/topupdashboard/customersubscription' element={<Topupdashboardlayout><Customersubscription /></Topupdashboardlayout>} />
+      
+      <Route path='*' element={<div className='text-ceneter h1 mt-5'>Page Not Found</div>}/>
       </Routes>
     </Router> 
     </>

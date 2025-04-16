@@ -8,6 +8,7 @@ const Homepage = () => {
     walletDetails: {},
   });
   const [current, setCurrent] = useState([]);
+  const [weeklyPayoutTotal, setWeeklyPayoutTotal] = useState(0);
   const [referralleftLink, setReferralleftLink] = useState([]);
   const [referralrightLink, setReferralrightLink] = useState([]);
   const [copiedleft, setCopied] = useState(false);
@@ -30,6 +31,9 @@ const Homepage = () => {
           userDetails: response.data.userDetails,
           walletDetails: response.data.walletDetails,
         });
+        const earnings = response.data.walletDetails?.weeklyEarnings || [];
+        const total = earnings.reduce((sum, entry) => sum + (entry.payoutAmount || 0), 0);
+        setWeeklyPayoutTotal(total);
         setReferralleftLink(response.data.userDetails.leftRefferalLink);
         setReferralrightLink(response.data.userDetails.rightRefferalLink);
         let walletBalance = response.data.walletDetails.walletBalance;
@@ -97,7 +101,7 @@ const Homepage = () => {
           <div className="card card-img-holder text-white h-75 usercard1">
             <div className="card-body">
               <h4 className="font-weight-normal mb-3">
-                Wallet Balance ($)
+                Available balance($)
                 <i className="mdi mdi-diamond mdi-24px float-end"></i>
               </h4>
               <h3 className="mb-5">{walletDetails.walletBalance}</h3>
@@ -144,23 +148,13 @@ const Homepage = () => {
           </div>
         </div>
 
-        {/* <div className="col-md-3 stretch-card grid-margin">
-          <div className="card card-img-holder text-white h-75 usercard1">
-            <div className="card-body">
-              <h4 className="font-weight-normal mb-3">
-                Withdraw Status
-                <i className="mdi mdi-diamond mdi-24px float-end"></i>
-              </h4>
-              <h2 className="mb-5">{walletDetails.withdrawStatus || ""}</h2>
-            </div>
-          </div>
-        </div> */}
+        
 
         <div className="col-md-3 stretch-card grid-margin">
           <div className="card card-img-holder text-white h-75 usercard1">
             <div className="card-body">
               <h4 className="font-weight-normal mb-3">Total Balance ($)</h4>
-              <h3 className="mb-5">{walletDetails.walletBalance}</h3>
+              <h3 className="mb-5">{weeklyPayoutTotal}</h3>
             </div>
           </div>
         </div>

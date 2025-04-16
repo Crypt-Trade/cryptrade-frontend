@@ -54,10 +54,10 @@ const Topuplogin = () => {
                     <img src={logo} style={{width:"230px"}} alt="Crypto Logo" className="logo-img mb-3 logoimage" />
                    {/* <h3 className="logoimage"> Top-up Dashboard Login</h3> */}
                     {/* Login Card */}
-                    <div className="card w-50 logincard">
+                    <div className="card logincard w-75" style={{ maxWidth: '720px' }}>
                     <h3></h3>
                       <form className="p-3" onSubmit={handleSubmit}>
-                       <div className='fw-bold text-center loginhere h3'>TOP-UP Dashboard Login </div>
+                       <div className='fw-bold text-center loginhere h3 mb-2'>Top-up Login </div>
                         <div className="mb-3">
                           <label htmlFor="userId" className="form-label">Email</label>
                           <input

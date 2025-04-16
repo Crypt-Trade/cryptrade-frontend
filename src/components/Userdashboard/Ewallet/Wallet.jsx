@@ -20,7 +20,7 @@ const [loading, setLoading] = useState(false);
   useEffect(() => {
     // Replace with real API call
     fetchWalletBalance();
-    // getAllWithdrawalOrders();
+     getAllWithdrawalOrders();
     getwalletaddress();
   }, []);
 
@@ -139,7 +139,9 @@ const [loading, setLoading] = useState(false);
           <thead className="table-success">
             <tr>
               <th>S/N</th>
+              <th>Order No</th>
               <th>Amount</th>
+              <th>Order date</th>
               <th>Wallet status</th>
             </tr>
           </thead>
@@ -148,8 +150,9 @@ const [loading, setLoading] = useState(false);
     userwithdrawOrders.map((order, index) => (
       <tr key={order._id || index}>
         <td>{index + 1}</td>
-        <td>{order.walletName || 'N/A'}</td>
-        <td>{order.amount}</td>
+        <td>{order.order_details.order_no}</td>
+        <td>{order.order_details.withdrawal_amount}</td>
+        <td>{new Date(order.order_details.withdrawal_order_date).toLocaleDateString()}</td>
         <td>{order.status}</td>
       </tr>
     ))
