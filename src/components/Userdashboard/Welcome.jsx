@@ -1,6 +1,9 @@
 import React from 'react'
 
 const Welcome = () => {
+  const username = sessionStorage.getItem("username");
+  const userId = sessionStorage.getItem("mySponsorId");
+
   return (
    <>
     <div className="invoice mt-5">
@@ -38,21 +41,21 @@ const Welcome = () => {
                               </div>
                                 <div className="row">
                                   <div className="col-lg-6 col-sm-12 name">
-                                    <p>Hello test</p>
+                                    <p>Hello <span>{username}</span></p>
                                   </div>
                                   <div className="col-lg-6 col-sm-12 udbhablogo">
                                     
                                   </div>
                                 </div>
                                 <p style={{textAlign:"justify", lineHeight:"1.5"}}>
-                                Thank you for being a part of xyz. By doing so, you have taken one of the most important decisions of your life that has the potential to transform your future. I take this occasion to heartily congratulate you and extend a warm welcome to this ever-growing xyz family. 
-                                 xyz provides a legitimate and ethical entrepreneurship opportunity where you can build a successful career through commitment, focus, and hard work. Our compensation plan is designed to reward you generously with lucrative sales commissions, and I invite you to give your 100% to achieve both time and financial freedom.  In case you need any assistance, feel free to contact our Support Team, who will be more than happy to assist you.
-                                  Kindly mention your User ID - <span className="ms-1">12345</span> in all future communication with us. Once again, welcome to the xyz! Congratulations on choosing to build an exciting career with us. We look forward to working closely with you. I wish you all the very best. May all your dreams come true.
+                                Thank you for being a part of cryptrade. By doing so, you have taken one of the most important decisions of your life that has the potential to transform your future. I take this occasion to heartily congratulate you and extend a warm welcome to this ever-growing cryptrade family. 
+                                Cryptrade provides a legitimate and ethical entrepreneurship opportunity where you can build a successful career through commitment, focus, and hard work. Our compensation plan is designed to reward you generously with lucrative sales commissions, and I invite you to give your 100% to achieve both time and financial freedom.  In case you need any assistance, feel free to contact our Support Team, who will be more than happy to assist you.
+                                  Kindly mention your User ID - <span className="ms-1">{userId}</span> in all future communication with us. Once again, welcome to the cryptrade! Congratulations on choosing to build an exciting career with us. We look forward to working closely with you. I wish you all the very best. May all your dreams come true.
                                 </p>
                                
                                 <p style={{lineHeight:"1.5"}}>
                                   With regards, <br />
-                                 xyz
+                                 Cryptrade
                                 </p>
                               </div>
                             </div>

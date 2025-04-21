@@ -29,6 +29,7 @@ const Reports = () => {
       {loading && <p className="text-center">Loading...</p>}
       {error && <p className="text-center text-danger">{error}</p>}
       {!loading && !error && (
+        <div className='table-responsive'>
         <table className="table table-bordered text-center">
           <thead className="table-success">
             <tr>
@@ -59,6 +60,7 @@ const Reports = () => {
             )}
           </tbody>
         </table>
+        </div>
       )}
     </div>
   );

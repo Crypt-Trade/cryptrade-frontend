@@ -158,7 +158,7 @@ const [loading, setLoading] = useState(false);
     ))
   ) : (
     <tr>
-      <td colSpan="4">No withdrawal history found.</td>
+      <td colSpan="5">No withdrawal history found.</td>
     </tr>
   )}
 </tbody>
