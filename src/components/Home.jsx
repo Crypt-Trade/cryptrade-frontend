@@ -106,8 +106,9 @@ const Home = () => {
              <div className='text-center'>
                  <img src={wfh} width={70}/>
              </div>
-             <div className=' mt-4 text-center fw-bold h5' style={{textAlign:"justify"}}>ABOUT BLOCKCHAIN</div>
-             <div style={{textAlign:"center"}}>Blockchain is a secure, decentralized system for recording digital transactions. 
+             <div className=' mt-4 text-center fw-bold h5' style={{textAlign:"justify"}}>OUR TECHNOLOGY</div>
+             <div style={{textAlign:"center"}}>
+             We leverage cutting-edge blockchain technology to ensure secure, transparent trading experiences for our users.
              </div> 
              </div>
              <div className='col-12 col-md-6 col-lg-3 aboutcard mb-4 p-3'>
