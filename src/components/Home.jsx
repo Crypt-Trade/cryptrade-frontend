@@ -104,7 +104,7 @@ const Home = () => {
            <div className='d-flex mt-4 flex-column align-items-center'>
            
              <img src={abouticon} width={250} alt="About Icon" />
-             <h1 className='about mt-5 text-center text-white'>- ABOUT US -</h1>
+             <h1 className='about mt-5 text-center '>- ABOUT US -</h1>
            </div>
      
           <div className='row aboutrow d-flex justify-content-center mt-5'>
