@@ -60,7 +60,7 @@ const Weeklypayout = () => {
               ))
             ) : (
               <tr>
-                <td colSpan="4">No payouts available</td>
+                <td colSpan="5">No payouts available</td>
               </tr>
             )}
           </tbody>

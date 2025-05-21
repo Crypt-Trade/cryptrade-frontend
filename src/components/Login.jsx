@@ -10,8 +10,10 @@ const Login = () => {
   console.log(ROOT_URL);
   const [sponsorId, setSponsorId] = useState("");
   const [password, setPassword] = useState("");
+   const [showPassword, setShowPassword] = useState(false);
 
   // const handleSubmit = (event) => {
+    
   //   event.preventDefault(); // Prevent page reload
 
   //   if (!sponsorId || !password) {
@@ -22,6 +24,10 @@ const Login = () => {
   //   // Add authentication logic here (API call, localStorage, etc.)
   //   navigate("/userdashboard");
   // };
+  const togglePassword = () =>{
+    setShowPassword(!showPassword);
+  }
+
    const handleSubmit = (event) => {
       event.preventDefault();
       if (sponsorId === "" || password === "") {
@@ -78,15 +84,18 @@ const Login = () => {
                     onChange={(e) => setSponsorId(e.target.value)}
                   />
                 </div>
-                <div className="mb-3">
+                <div className="mb-3 position-relative">
                   <label htmlFor="password" className="form-label">Password</label>
                   <input
-                    type="password"
+                     type={showPassword ? "text" : "password"}
                     className="form-control p-2"
                     id="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
+                   <span className="position-absolute end-0 top-50 translate-middle-y me-3 mt-1" onClick={togglePassword} style={{ cursor: "pointer" }}>
+              {showPassword ? <i className="fa fa-eye  mt-4" style={{fontSize:"20px"}}></i> : <i className="fa fa-eye-slash mt-4" style={{fontSize:"20px"}}></i>}
+            </span>
                 </div>
                 <div className="text-center">
                   <button type="submit" className="btn btn-primary w-50">Submit</button>

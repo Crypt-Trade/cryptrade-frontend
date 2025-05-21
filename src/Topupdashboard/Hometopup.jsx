@@ -83,10 +83,11 @@ const Hometopup = () => {
           <div className="card card-img-holder text-white h-75 gradientcard3" style={{ backgroundColor: "#265250" }}>
             <div className="card-body">
               <h4 className="font-weight-normal mb-3">
+              Active users
                 {/* You can name this section if needed */}
                 <i className="mdi mdi-diamond mdi-24px float-end"></i>
               </h4>
-              <h2 className="mb-5">{/* Optional value here */}</h2>
+              <h2 className="mb-5">{data.totalActiveUsers}</h2>
             </div>
           </div>
         </div>
