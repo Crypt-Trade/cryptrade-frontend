@@ -7,7 +7,7 @@ import "../css/nav.css";
 import "../css/service.css";
 // import Service from './Service';
 import "../css/home.css";
-import abouticon from "../assets/images/about.png"
+import abouticon from "../assets/images/bitcoin.png"
 import "../css/about.css"
 import wfh from "../assets/images/working.png"
 import team from "../assets/images/team.png";
@@ -18,6 +18,7 @@ import twitter from "../assets/images/twitter.png"
 import inta from "../assets/images/instragram.png"
 import "../css/contact.css"
 import logo from "../assets/images/crypto.png"
+import backgroundVideo from "../assets/images/backvideo.mp4";
 
 const Home = () => {
   const [formData, setFormData] = useState({
@@ -88,23 +89,28 @@ const Home = () => {
   </div>
 </nav>
      <div className="home-container">
+     <video autoPlay loop muted playsInline>
+    <source src={backgroundVideo} type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
      <div className='text-container'>
-        <h1 className='text-white'>GROW WITH US</h1>
+        <h1 className='text-white'>LEARN-TRADE-EARN</h1>
       </div>
      </div>
      
-     <div className='my-5'>
+     <div className='mb-5'>
+     <div className='aboutcontainer1'>
      <div className='container' id='aboutcontainer'>
            <div className='d-flex mt-4 flex-column align-items-center'>
            
-             <img src={abouticon} width={100} alt="About Icon" />
-             <h1 className='about mt-3 text-center'>- ABOUT US -</h1>
+             <img src={abouticon} width={250} alt="About Icon" />
+             <h1 className='about mt-5 text-center text-white'>- ABOUT US -</h1>
            </div>
      
-          <div className='row aboutrow d-flex justify-content-center'>
+          <div className='row aboutrow d-flex justify-content-center mt-5'>
           <div className='col-12 col-md-6 col-lg-3 aboutcard mb-4 p-3'>
              <div className='text-center'>
-                 <img src={wfh} width={70}/>
+                 <img src={wfh} width={80}/>
              </div>
              <div className=' mt-4 text-center fw-bold h5' style={{textAlign:"justify"}}>OUR TECHNOLOGY</div>
              <div style={{textAlign:"center"}}>
@@ -128,6 +134,7 @@ const Home = () => {
         </div>
         </div>
      {/* <About /> */}
+     </div>
      </div>
      <div className='pt-5'>
      <div className='service-container' id='service-container'>

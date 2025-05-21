@@ -48,10 +48,10 @@ const Welcome = () => {
                                   </div>
                                 </div>
                                 <p style={{textAlign:"justify", lineHeight:"1.5"}}>
-                                Thank you for being a part of cryptrade. By doing so, you have taken one of the most important decisions of your life that has the potential to transform your future. I take this occasion to heartily congratulate you and extend a warm welcome to this ever-growing cryptrade family. 
-                                Cryptrade provides a legitimate and ethical entrepreneurship opportunity where you can build a successful career through commitment, focus, and hard work. Our compensation plan is designed to reward you generously with lucrative sales commissions, and I invite you to give your 100% to achieve both time and financial freedom.  In case you need any assistance, feel free to contact our Support Team, who will be more than happy to assist you.
-                                  Kindly mention your User ID - <span className="ms-1">{userId}</span> in all future communication with us. Once again, welcome to the cryptrade! Congratulations on choosing to build an exciting career with us. We look forward to working closely with you. I wish you all the very best. May all your dreams come true.
-                                </p>
+                                We are thrilled to welcome you to the Cryptrade community! You're now part of an elite group of crypto enthusiasts and traders who are taking advantage of real-time, expert-backed trading signals to stay ahead of the market.
+At Cryptrade, our mission is simple — to help you trade smarter, faster, and with greater confidence. Whether you're a seasoned trader or just getting started in the world of cryptocurrency, our signals are designed to guide your trading decisions with precision.
+We’re excited to have you with us and look forward to helping you achieve your trading goals. Remember, consistency, patience, and discipline are the keys to long-term success in crypto trading.
+                                 </p>
                                
                                 <p style={{lineHeight:"1.5"}}>
                                   With regards, <br />

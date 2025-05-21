@@ -3,6 +3,7 @@ import axios from "axios";
 import "./geneology.css";
 import { useNavigate } from "react-router-dom";
 import user from "../../../assets/images/user.png";
+import user_red from "../../../assets/images/user_red.png";
 
 const Genealogy = () => {
   const [activeNodes, setActiveNodes] = useState({});
@@ -139,8 +140,8 @@ const Genealogy = () => {
           <a className="text-decoration-none" href="#" onClick={(e) => handleNodeClick(e, node._id)}>
             <div className="member-view-box">
               <div className="member-image">
-              {node.isActive === true ?  <img src={user} alt="Member" style={{backgroundColor:"green"}} />
-              : <img src={user} alt="Member" style={{backgroundColor:"#c95b51"}} />}
+              {node.isActive === true ?  <img src={user} alt="Member"  />
+              : <img src={user_red} alt="Member"/>}
               </div>
               <div className="member-footer">
                 <div className="name">
@@ -205,8 +206,8 @@ const Genealogy = () => {
         <a href="#"  className="text-decoration-none" onClick={(e) => handleNodeClick(e, node._id)}>
           <div className="member-view-box">
             <div className="member-image">
-            {node.isActive === true ?  <img src={user} alt="Member" style={{backgroundColor:"green"}} />
-            :  <img src={user} alt="Member" style={{ backgroundColor: node.isActive ? "#45c47a" : "#c95b51" }} />}
+            {node.isActive === true ?  <img src={user} alt="Member"  />
+            :  <img src={user_red} alt="Member"  />}
               {/* <img src={user} alt="Member" /> */}
             </div>
             <div className="member-footer">

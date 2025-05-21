@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import axios from "axios";
 import "../../css/Topupdashboard/allpackage.css";
 import swal from "sweetalert"
@@ -7,6 +7,8 @@ const Billing = () => {
   const [sponsorId, setSponsorId] = useState("");
   const [orderNo, setOrderNo] = useState("");
   const ROOT_URL = import.meta.env.VITE_LOCALHOST_URL;
+  const [users, setUser] = useState([]);
+   const [selectedUserName, setSelectedUserName] = useState("");
 
   const addToCart = (product) => {
     setCart((prevCart) => {
@@ -73,6 +75,46 @@ const submitwithoutOrder = async () => {
     { productId: 4, name: "Monthly subscription", price:25 },
    
   ];
+  /////user search for finding name
+   useEffect(() => {
+   if (!sponsorId) {
+    setUser(null);
+    setSelectedUserName("");
+    return;
+  }
+
+  const fetchSponsors = async () => {
+     setSelectedUserName(""); // Clear old name before fetching
+    setUser(null);
+    try {
+      const response = await axios.post(`${ROOT_URL}/api/auth/verify-sponsor`, { sponsorId });
+      if (response.status === 200) {
+        const user = response.data.sponsor;
+        console.log(user);
+        setUser(user); // Set single user object (not array)
+        setSelectedUserName(user.name);
+      }
+    } catch (error) {
+      console.error("Error fetching sponsors:", error);
+    }
+  };
+
+  fetchSponsors();
+}, [sponsorId]); // 👈 sponsorId is the dependency
+
+  ////////////
+ const handleInputChange = (e) => {
+    const inputId = e.target.value;
+    setSponsorId(inputId);
+
+    // Find the user based on the entered ID
+    const matchingSponsor = users.find(
+      (user) => user.mySponsorId.toLowerCase() === inputId.toLowerCase()
+    );
+
+    // Set the corresponding name if a match is found, otherwise clear the name
+    setSelectedUserName(matchingSponsor ? matchingSponsor.name : "");
+  };
 
   return (
     <>
@@ -107,10 +149,12 @@ const submitwithoutOrder = async () => {
             <input 
               type="text" 
               className="form-control p-2 mb-2 w-100" 
-              placeholder="Enter Sponsor ID..." 
+              placeholder="Enter User ID..." 
               value={sponsorId} 
-              onChange={(e) => setSponsorId(e.target.value)} 
+              // onChange={(e) => setSponsorId(e.target.value)} 
+               onChange={handleInputChange}
             />
+            <div className="mb-3">User Name: {selectedUserName}</div>
             <div className="d-flex mb-2">
               <label className="mt-2 me-2">Enter order no:</label>
               <input 
@@ -155,10 +199,11 @@ const submitwithoutOrder = async () => {
             <input 
               type="text" 
               className="form-control p-2 mb-2 w-100" 
-              placeholder="Enter Sponsor ID..." 
+              placeholder="Enter User ID..." 
               value={sponsorId} 
               onChange={(e) => setSponsorId(e.target.value)} 
             />
+             <div className="mb-3">User Name: {selectedUserName}</div>
              <div className="pos-sidebar-body tab-content"> 
               {cart.length > 0 ? (
                 <ul>
