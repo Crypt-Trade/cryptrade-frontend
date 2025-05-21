@@ -22,7 +22,7 @@ const Dashboard = ({children}) => {
 
       {/* Footer */}
       <footer className="p-3 text-center bg-secondary text-white ">
-        Copyright © 2025 Synthosphere Technologies Pvt Ltd. All rights reserved.
+        Copyright © 2025 Cryptrade.biz. All rights reserved.
       </footer>
     </>
   )
