@@ -66,16 +66,32 @@ const Allpackages = () => {
       <div className="row justify-content-center">
         {/* Kick Starter Package */}
         <div className="col-md-3 my-4 ">
-        <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 h-100 rounded-3">
+        <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 h-100 rounded-3 cardpackage">
 
             <div className="card-body d-flex flex-column">
               <h3 className="text-center fw-bold">Kick Starter</h3>
-              <div className="fw-bold h5 text-center">50 USDT</div>
+              <div className="fw-bold h5 text-center mt-2">50 USDT (Online)</div>
               <div className="flex-grow-1">
-                <div className="kick">🌟 Basic trading knowledge</div>
-                <div className="kick">🌟 Meme coin name</div>
-                <div className="kick">🌟 1-month subscription for premium</div>
-                <div className="kick">🌟 Bonus 1-2 long-term GEM coin</div>
+              <div className="d-flex mt-2">
+              <div>🌟</div>
+              <div className="ms-2"> Basic trading knowledge</div>
+              </div>
+              <div className="d-flex mt-2">
+              <div>🌟</div>
+              <div className="ms-2"> Meme coin name</div>
+              </div>
+              <div className="d-flex mt-2">
+              <div>🌟</div>
+              <div className="ms-2">1-month subscription for premium</div>
+              </div>
+               <div className="d-flex mt-2">
+              <div>🌟</div>
+              <div className="ms-2">Bonus 1-2 long-term GEM coin</div>
+              </div>
+                {/* <div className="kick">🌟 Basic trading knowledge</div> */}
+                {/* <div className="kick">🌟 Meme coin name</div> */}
+                {/* <div className="kick">🌟 1-month subscription for premium</div> */}
+                {/* <div className="kick">🌟 Bonus 1-2 long-term GEM coin</div> */}
               </div>
             </div>
           </div>
@@ -83,19 +99,39 @@ const Allpackages = () => {
 
         {/* Bull Starter Package */}
         <div className="col-md-3 my-4">
-        <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 rounded-3 h-100">
+        <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 rounded-3 h-100 cardpackage">
 
             <div className="card-body d-flex flex-column">
               <h3 className="text-center fw-bold">Bull Starter</h3>
-              <div className="fw-bold h5 text-center">100 USDT</div>
+              <div className="fw-bold h5 text-center mt-2">100 USDT (Online)</div>
               <div className="flex-grow-1">
-                <div className="kick">🌟 Advance crypto knowledge</div>
-                <div className="kick">🌟 Meme coin checklist</div>
-                <div className="kick">
+              <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2"> Advance crypto knowledge</div>
+              </div>
+              <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2"> Meme coin checklist</div>
+              </div>
+              <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2"> 3-month subscription for premium group</div>
+              </div>
+               <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">Future trading call</div>
+              </div>
+              <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">Bonus 5 long-term holding</div>
+              </div>
+                {/* <div className="kick">🌟 Advance crypto knowledge</div> */}
+                {/* <div className="kick">🌟 Meme coin checklist</div> */}
+                {/* <div className="kick">
                   🌟 3-month subscription for premium group
-                </div>
-                <div className="kick">🌟 Future trading call</div>
-                <div className="kick">🌟 Bonus 5 long-term holding</div>
+                </div> */}
+                {/* <div className="kick">🌟 Future trading call</div> */}
+                {/* <div className="kick">🌟 Bonus 5 long-term holding</div> */}
               </div>
             </div>
           </div>
@@ -103,21 +139,44 @@ const Allpackages = () => {
 
         {/* Whales Starter Package */}
         <div className="col-md-3 my-4">
-        <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 rounded-3 h-100">
+        <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 rounded-3 h-100 cardpackage">
             <div className="card-body d-flex flex-column">
               <h3 className="text-center fw-bold">Whales Starter</h3>
-              <div className="fw-bold h5 text-center">500 USDT</div>
+              <div className="fw-bold h5 text-center">500 USDT (Online/Offline)</div>
               <div className="flex-grow-1">
-                <div className="kick">
-                  🌟 Master trading skill + lifetime asset
-                </div>
-                <div className="kick">🌟 1-year subscription premium group</div>
-                <div className="kick">🌟 10 GEM coin name</div>
-                <div className="kick">🌟 Portfolio management</div>
-                <div className="kick">🌟 Future trade call</div>
-                <div className="kick">🌟 Liquidation strategy</div>
-                <div className="kick">🌟 Future scalping</div>
-                <div className="kick">🌟 20 long-term coin name</div>
+              <div className="d-flex">
+                <div>🌟</div>
+                <div className="ms-2">Master trading skill + life time asset</div>
+              </div>
+              <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">1-year subscription for premium group</div>
+              </div>
+              <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">10 GEM coin name</div>
+              </div>
+               <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">Portfolio management</div>
+              </div>
+               <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">Future trade call</div>
+              </div>
+              <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">Liquidation strategy</div>
+              </div>
+              <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">Future scalping</div>
+              </div>
+              <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">20 long-term coin name</div>
+              </div>
+                
               </div>
             </div>
           </div>
@@ -125,13 +184,17 @@ const Allpackages = () => {
 
         {/* Monthly Subscription (Add-On) */}
         <div className="col-md-3 my-4">
-        <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 rounded-3 h-100">
+        <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 rounded-3 h-100 cardpackage">
             <div className="card-body d-flex flex-column">
               <h5 className="text-center fw-bold">Monthly subscription</h5>
               <h5 className="text-center fw-bold">(Add On)</h5>
               <div className="fw-bold h5 text-center">25 USDT</div>
               <div className="flex-grow-1">
-                <div className="kick">🌟1-month subscription for premium</div>
+              <div className="d-flex">
+                <div >🌟</div>
+                <div className="ms-2">1-month subscription for premium</div>
+              </div>
+                {/* <div className="kick">🌟1-month subscription for premium</div> */}
               </div>
             </div>
           </div>

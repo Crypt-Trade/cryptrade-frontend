@@ -86,7 +86,7 @@ const Homepage = () => {
     <>
       <div className="row p-2">
         <div className="col-md-3 stretch-card grid-margin">
-          <div className="card card-img-holder text-white h-75 usercard1 ">
+          <div className="card card-img-holder text-dark h-75 usercard1 ">
             <div className="card-body">
               <h4 className="font-weight-normal mb-3">
                 User Status
@@ -98,7 +98,7 @@ const Homepage = () => {
         </div>
 
         <div className="col-md-3 stretch-card grid-margin">
-          <div className="card card-img-holder text-white h-75 usercard1">
+          <div className="card card-img-holder text-dark h-75 usercard1">
             <div className="card-body">
               <h4 className="font-weight-normal mb-3">
                 Available balance($)
@@ -110,7 +110,7 @@ const Homepage = () => {
         </div>
 
         <div className="col-md-3 stretch-card grid-margin">
-          <div className="card card-img-holder text-white h-75 usercard1">
+          <div className="card card-img-holder text-dark h-75 usercard1">
             <div className="card-body">
               <h4 className="font-weight-normal mb-3">
                 Direct Affiliate Bonus
@@ -122,7 +122,7 @@ const Homepage = () => {
           </div>
         </div>
         <div className="col-md-3 stretch-card grid-margin">
-          <div className="card card-img-holder text-white h-75 usercard1">
+          <div className="card card-img-holder text-dark h-75 usercard1">
             <div className="card-body">
               <h4 className="font-weight-normal mb-3">
                 Team Affiliate Bonus
@@ -137,7 +137,7 @@ const Homepage = () => {
       <div className="row p-2">
        
       <div className="col-md-3 stretch-card grid-margin">
-          <div className="card card-img-holder text-white h-75 usercard1">
+          <div className="card card-img-holder text-dark h-75 usercard1">
             <div className="card-body">
               <h4 className="font-weight-normal mb-3">
                 Personal Points
@@ -151,7 +151,7 @@ const Homepage = () => {
         
 
         <div className="col-md-3 stretch-card grid-margin">
-          <div className="card card-img-holder text-white h-75 usercard1">
+          <div className="card card-img-holder text-dark h-75 usercard1">
             <div className="card-body">
               <h4 className="font-weight-normal mb-3">Total Balance ($)</h4>
               <h3 className="mb-5">{weeklyPayoutTotal}</h3>
@@ -159,7 +159,7 @@ const Homepage = () => {
           </div>
         </div>
         <div className="col-md-3 stretch-card grid-margin">
-          <div className="card card-img-holder text-white h-75 usercard1">
+          <div className="card card-img-holder text-dark h-75 usercard1">
             <div className="card-body">
               <h4 className="font-weight-normal mb-3">
                 Weekly Team Points
@@ -171,7 +171,7 @@ const Homepage = () => {
           </div>
         </div>
         <div className="col-md-3 stretch-card grid-margin">
-          <div className="card card-img-holder text-white h-75 usercard1">
+          <div className="card card-img-holder text-dark h-75 usercard1">
             <div className="card-body">
               <h4 className="font-weight-normal mb-3">
                 Direct Points
@@ -186,7 +186,7 @@ const Homepage = () => {
       <div className="row p-1">
           
       <div className="col-md-6 stretch-card grid-margin">
-          <div className="card card-img-holder text-white h-75 usercard1">
+          <div className="card card-img-holder text-dark h-75 usercard1">
             <div className="card-body">
               <h4 className="font-weight-normal mb-3">
                 Left Link
@@ -195,7 +195,7 @@ const Homepage = () => {
               <div className="d-flex">
               <div className="h3 mb-5 leftlink">{userDetails.leftRefferalLink}</div>
               {
-                    copiedleft ? <span className="ms-2 text-white">Copied!</span> : <i className="fa fa-copy ms-2" onClick={handleCopyLinkleft}></i>
+                    copiedleft ? <span className="ms-2 text-dark">Copied!</span> : <i className="fa fa-copy ms-2" onClick={handleCopyLinkleft}></i>
                   }
               </div>
               
@@ -205,7 +205,7 @@ const Homepage = () => {
           </div>
         </div>
         <div className="col-md-6 col-sm-12 stretch-card grid-margin">
-          <div className="card card-img-holder text-white h-75 usercard1">
+          <div className="card card-img-holder text-dark h-75 usercard1">
             <div className="card-body">
               <h4 className="font-weight-normal mb-3">
               Right Link
@@ -213,7 +213,7 @@ const Homepage = () => {
               <div className="d-flex">
               <div className="h6 mb-5 rightlink">{userDetails.rightRefferalLink}</div>
               {
-                  copiedright ? <span className="ms-2 text-white">Copied! </span> : <i className="fa fa-copy ms-2" onClick={handleCopyLinkright}></i>
+                  copiedright ? <span className="ms-2 text-dark">Copied! </span> : <i className="fa fa-copy ms-2" onClick={handleCopyLinkright}></i>
                 }
               </div>
            
@@ -223,9 +223,9 @@ const Homepage = () => {
        
       </div>
 
-      <div className="d-flex justify-content-center">
-        <div className="h5 text-center fw-bold">Minimum Withdraw:-</div>
-        <div className="h5 text-center fw-bold ms-2">10 USDT</div>
+      <div className="d-flex justify-content-center p-3" style={{backgroundColor: "#004d97" }}>
+        <div className="h5 text-center fw-bold text-white">Minimum Withdraw:-</div>
+        <div className="h5 text-center fw-bold ms-2 text-white">10 USDT</div>
       </div>
     </>
   );

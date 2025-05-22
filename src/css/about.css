@@ -2,12 +2,44 @@
     color: rgb(42, 40, 40);
    
 }
-#aboutcontainer{}
+
+/* .aboutcontainer1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+  }  */
+  
+/* .aboutcontainer1 {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+  background-image: url("../assets/images/photo1.jpg");
+
+  } */
 .aboutcard{
     background-color: white;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.8);
     border-radius: 40px;
 }
+.aboutcard {
+  position: relative;
+  /* margin-top: 50px; */
+ 
+ z-index: 1; 
+  
+   /* Center text vertically */
+}
+.about{
+  z-index: 1;
+}
+.bitcoin{
+  z-index: 1;
+}
+  
 .aboutrow{
     gap: 8%;
 }

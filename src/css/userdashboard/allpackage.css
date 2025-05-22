@@ -1,11 +1,17 @@
 .cardpackage{
-    border-radius: 15px !important;
-    min-height: 500px;
-    line-height: 30px;
-    border: none;
-    font-size: 19px;
-    font-weight: 500;
+    
+     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+
 }
+.cardpackage {
+    transition: transform 0.2s ease, background-color 0.4s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+  }
+  
+  .cardpackage:hover {
+    transform: scale(1.05);
+    background-color: #d7ddf3;
+  }
 @media (min-width: 768px) {
     .select_package{
         width: 25%;

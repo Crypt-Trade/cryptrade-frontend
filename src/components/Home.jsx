@@ -8,6 +8,8 @@ import "../css/service.css";
 // import Service from './Service';
 import "../css/home.css";
 import abouticon from "../assets/images/bitcoin.png"
+import servicesicon from "../assets/images/ETH.png"
+import contacticon from "../assets/images/LTC.png"
 import "../css/about.css"
 import wfh from "../assets/images/working.png"
 import team from "../assets/images/team.png";
@@ -19,7 +21,7 @@ import inta from "../assets/images/instragram.png"
 import "../css/contact.css"
 import logo from "../assets/images/crypto.png"
 import backgroundVideo from "../assets/images/backvideo.mp4";
-
+import bg1 from "../assets/images/bg1.jpg";
 const Home = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -53,6 +55,9 @@ const Home = () => {
   };
   return (
     <>
+    <div
+ 
+>
      {/* <Nav/> */}
      <nav className="navbar navbar-expand-lg">
   <div className="container-fluid ">
@@ -98,13 +103,19 @@ const Home = () => {
       </div>
      </div>
      
-     <div className='mb-5'>
+     <div  className="home-background"
+  style={{
+     backgroundImage: `url(${bg1})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+  }}>
      <div className='aboutcontainer1'>
      <div className='container' id='aboutcontainer'>
-           <div className='d-flex mt-4 flex-column align-items-center'>
+           <div className='d-flex  flex-column align-items-center'>
            
-             <img src={abouticon} width={250} alt="About Icon" />
-             <h1 className='about mt-5 text-center '>- ABOUT US -</h1>
+             <img src={abouticon} className='bitcoin mt-5' width={250} alt="About Icon" />
+             <h1 className='about mt-5 text-center text-white fw-bold'>- ABOUT US -</h1>
            </div>
      
           <div className='row aboutrow d-flex justify-content-center mt-5'>
@@ -135,23 +146,28 @@ const Home = () => {
         </div>
      {/* <About /> */}
      </div>
-     </div>
-     <div className='pt-5'>
+     
+     <div className=''>
      <div className='service-container' id='service-container'>
-      <div className='container py-5'>
-      <h1 className='text-white fw-bold text-center'>- SERVICES -</h1>
+      <div className='container pb-5'>
+      <div className='d-flex  flex-column align-items-center'>
+           
+             <img src={servicesicon} className='bitcoin mt-5' width={400} alt="About Icon" />
+               <h1 className='text-white fw-bold text-center mt-5'>- SERVICES -</h1>
+           </div>
+    
       <div className="row g-4 mt-4">
         {/* Card 1 */}
         <div className="col-md-4">
           <div className="card p-3 text-center shadow servicecard">
-            <h5 className="card-title fw-bold">Advance cryptoknowledge</h5>
+            <h5 className="card-title fw-bold">Advance Crypto Knowledge</h5>
             <p className="card-text">Advanced cryptography involves secure algorithms, protocols, and cryptanalysis techniques to protect data, ensure privacy, and enable decentralized security solutions.</p>
           </div>
         </div>
         {/* Card 2 */}
         <div className="col-md-4">
           <div className="card p-3 text-center shadow servicecard">
-            <h5 className="card-title fw-bold">Subscribtion for premium</h5>
+            <h5 className="card-title fw-bold">Subscribtion For Premium</h5>
             <p className="card-text">Subscribe to premium for exclusive features, enhanced security, and advanced cryptographic insights.</p>
           </div>
         </div>
@@ -159,7 +175,7 @@ const Home = () => {
         {/* Card 3 */}
         <div className="col-md-4">
           <div className="card p-3 text-center shadow servicecard">
-            <h5 className="card-title fw-bold">Meme coin checklist</h5>
+            <h5 className="card-title fw-bold">Meme Coin Checklist</h5>
             <p className="card-text">A meme coin checklist includes strong community support, viral potential, liquidity, security, and real-world utility.</p>
           </div>
         </div>
@@ -168,7 +184,7 @@ const Home = () => {
         {/* Card 1 */}
         <div className="col-md-4">
           <div className="card p-3 text-center shadow servicecard">
-            <h5 className="card-title fw-bold">A future trading call</h5>
+            <h5 className="card-title fw-bold">A Future Trading Call</h5>
             <p className="card-text">A future trading call includes entry price, stop-loss, target levels, risk management, and market analysis.</p>
           </div>
         </div>
@@ -176,7 +192,7 @@ const Home = () => {
         {/* Card 2 */}
         <div className="col-md-4">
           <div className="card p-3 text-center shadow servicecard">
-            <h5 className="card-title fw-bold">Portfolio management</h5>
+            <h5 className="card-title fw-bold">Portfolio Management</h5>
             <p className="card-text">Portfolio management includes asset allocation, risk assessment, diversification, rebalancing, and performance tracking.</p>
           </div>
         </div>
@@ -184,7 +200,7 @@ const Home = () => {
         {/* Card 3 */}
         <div className="col-md-4">
           <div className="card p-3 text-center shadow servicecard">
-            <h5 className="card-title fw-bold">Liquidation strategy</h5>
+            <h5 className="card-title fw-bold">Liquidation Strategy</h5>
             <p className="card-text">A liquidation strategy includes risk assessment, stop-loss placement, margin monitoring, exit planning, and capital preservation.</p>
           </div>
         </div>
@@ -194,12 +210,14 @@ const Home = () => {
      {/* <Service /> */}
      </div>
      <div className='pt-5'>
-     <div className='container my-4' id='contactcontainer'>
-                
-                     <div className='text-center'>
-                       <img src={tele} width={80} alt="Telephone Icon" />
-                     </div>
-                     <h1 className='about mt-3 text-center'>- CONTACT US -</h1>
+     <div className='container' id='contactcontainer'>
+                 <div className='d-flex  flex-column align-items-center'>
+           
+             <img src={contacticon} className='bitcoin mt-4' width={200} alt="About Icon" />
+                <h1 className='about mt-5 text-center text-white'>- CONTACT US -</h1>
+           </div>
+                     
+                    
                      <div className='row'>
                      <div className='col-lg-12 text-center mt-5'>
                          <div className=''>
@@ -213,7 +231,7 @@ const Home = () => {
                            </div>
                          </div>
                        </div>
-                       <div className='col-lg-12  mt-5'>
+                       <div className='col-lg-12  mt-5 mb-5'>
                        <div className='d-flex justify-content-center'>
                          <div className='card formcontact w-75' style={{ maxWidth: '720px' }}>
                            <form className='p-4' onSubmit={handleSubmit}>
@@ -278,7 +296,8 @@ const Home = () => {
                    </div>
      {/* <Contact /> */}
      </div>
-     
+     </div>
+     </div>
     </>
    
   )

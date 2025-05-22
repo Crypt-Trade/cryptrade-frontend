@@ -22,19 +22,19 @@ const Genealogy = () => {
 
   // Fetch tree data for a given nodeId
   //search for sponsorid
-  const handleSearch = async (e) => {
-    e.preventDefault();
-    try {
-        // Make API request to search for the sponsor
-        console.log(sponsorid);
-        const response = await axios.get(`${ROOT_URL}/api/auth/searchUserInGenealogyTree/${sponsorid}`);
-       setTreeData(response.data);
-       console.log(response);
-    } catch (err) {
+//   const handleSearch = async (e) => {
+//     e.preventDefault();
+//     try {
+//         // Make API request to search for the sponsor
+//         console.log(sponsorid);
+//         const response = await axios.get(`${ROOT_URL}/api/auth/searchUserInGenealogyTree/${sponsorid}`);
+//        setTreeData(response.data);
+//        console.log(response);
+//     } catch (err) {
       
-        console.log(err);
-    }
-};
+//         console.log(err);
+//     }
+// };
   //end
   const handleExtremeTop = async () => {
     try {
@@ -140,8 +140,8 @@ const Genealogy = () => {
           <a className="text-decoration-none" href="#" onClick={(e) => handleNodeClick(e, node._id)}>
             <div className="member-view-box">
               <div className="member-image">
-              {node.isActive === true ?  <img src={user} alt="Member"  />
-              : <img src={user_red} alt="Member"/>}
+              {node.isActive === true ?  <img src={user} style={{border:"3px solid green"}} alt="Member"  />
+              : <img src={user_red} style={{border:"3px solid red"}} alt="Member"/>}
               </div>
               <div className="member-footer">
                 <div className="name">
@@ -206,8 +206,8 @@ const Genealogy = () => {
         <a href="#"  className="text-decoration-none" onClick={(e) => handleNodeClick(e, node._id)}>
           <div className="member-view-box">
             <div className="member-image">
-            {node.isActive === true ?  <img src={user} alt="Member"  />
-            :  <img src={user_red} alt="Member"  />}
+            {node.isActive === true ?  <img src={user} style={{border:"3px solid green"}} alt="Member"  />
+            :  <img src={user_red} style={{border:"3px solid red"}} alt="Member"  />}
               {/* <img src={user} alt="Member" /> */}
             </div>
             <div className="member-footer">
