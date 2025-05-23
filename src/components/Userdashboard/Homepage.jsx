@@ -224,7 +224,7 @@ const Homepage = () => {
       </div>
 
       <div className="d-flex justify-content-center p-3" style={{backgroundColor: "#004d97" }}>
-        <div className="h5 text-center fw-bold text-white">Minimum Withdraw:-</div>
+        <div className="h5 text-center  fw-semibold text-white" style={{fontSize:"20px"}}>Minimum Withdraw:-</div>
         <div className="h5 text-center fw-bold ms-2 text-white">10 USDT</div>
       </div>
     </>

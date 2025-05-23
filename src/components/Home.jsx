@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import axios from 'axios';
 import Nav from "./Nav"
 // import About from "./About"
@@ -21,8 +21,10 @@ import inta from "../assets/images/instragram.png"
 import "../css/contact.css"
 import logo from "../assets/images/crypto.png"
 import backgroundVideo from "../assets/images/backvideo.mp4";
-import bg1 from "../assets/images/bg1.jpg";
+import bg1 from "../assets/images/bg2.jpg";
 const Home = () => {
+    const [coins, setCoins] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
     name: '',
     phoneNo: '',
@@ -53,11 +55,39 @@ const Home = () => {
       }
     }
   };
+  //////////////////api for price of coins
+
+
+ useEffect(() => {
+    axios
+      .get("https://api.coingecko.com/api/v3/coins/markets", {
+        params: {
+          vs_currency: "usd",
+          order: "market_cap_desc",
+          per_page: 20,
+          page: 1,
+          sparkline: false,
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setCoins(res.data);
+      })
+      .catch((err) => console.error("API Error:", err));
+  }, []);
+
   return (
     <>
-    <div
- 
->
+    <div>
+     <div style={{ background: "#111", color: "white", padding: "11px" }}>
+      <marquee behavior="scroll" direction="left" scrollamount="6">
+        {coins.map((coin) => (
+          <span key={coin.id} style={{ marginRight: "40px" }}>
+            {coin.name}: ${coin.current_price.toLocaleString()}
+          </span>
+        ))}
+      </marquee>
+    </div>
      {/* <Nav/> */}
      <nav className="navbar navbar-expand-lg">
   <div className="container-fluid ">
@@ -106,7 +136,7 @@ const Home = () => {
      <div  className="home-background"
   style={{
      backgroundImage: `url(${bg1})`,
-    backgroundSize: "cover",
+     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
   }}>
@@ -225,7 +255,7 @@ const Home = () => {
                            <div className='d-flex mt-3 justify-content-center'>
                            <div>
                              <img src={facebook} width={40} className='ms-5' alt="Facebook" />
-                             <img src={twitter} width={40} className='ms-5' alt="Twitter" />
+                             {/* <img src={twitter} width={40} className='ms-5' alt="Twitter" /> */}
                              <img src={inta} width={40} className='ms-5' alt="Instagram" />
                            </div>
                            </div>

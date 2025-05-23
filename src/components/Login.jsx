@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/login.css";
 import axios from "axios";
+import Swal from 'sweetalert2';
 import logo from "../assets/images/crypto.png"; // Ensure correct path
 
 const Login = () => {
@@ -43,7 +44,23 @@ const Login = () => {
             // const {_id : _id} = res.data.user;
             const {name : name} = res.data.user;
             const {mySponsorId : mySponsorId} = res.data.user;
-            swal("Yeah", "Login Successful!!", "success");
+            Swal.fire({
+          title: 'Login Successful!',
+          html: `
+             <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+      <lottie-player
+        src="https://assets2.lottiefiles.com/packages/lf20_jbrw3hcz.json"
+        background="transparent"
+        speed="1"
+        style="width: 200px; height: 200px;"
+        autoplay
+      ></lottie-player>
+      <p style="margin-top: 10px; font-size: 28px;">Welcome to the Dashboard!</p>
+    </div>
+          `,
+          showConfirmButton: false,
+          timer: 3000,
+        });
          
             sessionStorage.setItem('userid', _id);
             sessionStorage.setItem('username', name);
@@ -51,9 +68,6 @@ const Login = () => {
             sessionStorage.setItem('token', token);
             
               navigate('/userdashboard');
-              
-           
-  
           })
           .catch(err => {
             console.log(err);
@@ -79,6 +93,7 @@ const Login = () => {
                   <input
                     type="text"
                     className="form-control p-2"
+                    placeholder="Enter your User ID"
                     id="userId"
                     value={sponsorId}
                     onChange={(e) => setSponsorId(e.target.value)}
@@ -88,6 +103,7 @@ const Login = () => {
                   <label htmlFor="password" className="form-label">Password</label>
                   <input
                      type={showPassword ? "text" : "password"}
+                    placeholder="Enter your Password"
                     className="form-control p-2"
                     id="password"
                     value={password}
@@ -98,7 +114,7 @@ const Login = () => {
             </span>
                 </div>
                 <div className="text-center">
-                  <button type="submit" className="btn btn-primary w-50">Submit</button>
+                  <button type="submit" className="btn w-50 text-white" style={{backgroundColor:"#78266f"}}>Submit</button>
                 </div>
                 <div className="row mt-3">
                         <div className='col-md-6'>

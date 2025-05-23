@@ -69,23 +69,23 @@ const Verifysponsor = () => {
                         </div>
                         <div className="form-group mb-4">
 
-                          <label className="mb-1 mt-3" htmlFor="exampleInputEmail1" style={{fontSize:"15px"}}>SponsorID</label>
+                          <label className="mb-1 mt-3" htmlFor="exampleInputEmail1" style={{fontSize:"15px"}}>User ID</label>
                           <div className='d-flex'>
-                          <input type="text" className="form-control w-75 p-2" id="id" name='id'  placeholder="Entersponsorid" onChange={e => setSponsorid(e.target.value)} />
-                          <button className='btn btn-primary ms-4 w-25' onClick={handleverify}>Verify</button>
+                          <input type="text" className="form-control w-75 p-2" id="id" name='id'  placeholder="Enter User ID" onChange={e => setSponsorid(e.target.value)} />
+                          <button className='btn  ms-4 w-25 text-white' style={{backgroundColor:"#78266f"}} onClick={handleverify}>Verify</button>
                           </div>
                         </div>
                         <div className="form-group mb-4">
-                          <label className="mb-1" htmlFor="exampleInputEmail1">Sponsor Name</label>
+                          <label className="mb-1" htmlFor="exampleInputEmail1">User Name</label>
                           <input type="text" className="form-control p-2 " id="name" name='name' readOnly
-                            placeholder="Enter Your Name" value={name} />
+                            value={name} />
                         </div>
                         
                      
                         
 
                         <div className="pt-1 mb-4 text-center">
-                          <button className="btn btn-primary w-50" type="submit"  onClick={handleSubmit}>Signup</button>
+                          <button className="btn w-50 text-white" type="submit" style={{backgroundColor:"#78266f"}}   onClick={handleSubmit}>Signup</button>
                         </div>
                         <div className="row">
                         <div className='col-md-6'>
