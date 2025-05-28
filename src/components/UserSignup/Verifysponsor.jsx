@@ -56,7 +56,7 @@ const Verifysponsor = () => {
         <div className="row">
         <div className="col-lg-12 d-flex flex-column align-items-center">
              <img src={logo} style={{width:"230px"}} alt="Crypto Logo" className="logo-img mb-3 logoimage" />
-              <div className="card w-50 logincard" > 
+              <div className="card w-lg-75 w-sm-100 logincard" > 
                 <div className="row">
                   
                   <div className="col-md-12 col-lg-12 d-flex">

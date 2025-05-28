@@ -142,10 +142,10 @@ const Signup = () => {
               {showPassword ? <i className="fa fa-eye-slash mt-4" style={{fontSize:"20px"}}></i> : <i className="fa fa-eye mt-4" style={{fontSize:"20px"}}></i>}
             </span>
           </div>
-
-          <button type="submit" className="btn btn-primary w-25">
+          <div className='text-center'> <button type="submit" className="btn  text-center text-white" style={{width:"27%" , backgroundColor:"#78266f"}}>
             Register
-          </button>
+          </button></div>
+         
         </form>
       </div>
     </div>
