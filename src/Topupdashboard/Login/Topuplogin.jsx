@@ -25,7 +25,7 @@ const Topuplogin = () => {
           // const {_id : _id} = res.data.user;
         //   const {name : name} = res.data.user;
         //   const {mySponsorId : mySponsorId} = res.data.user;
-          swal("Yeah", "Login Successful!!", "success");
+          swal("Successfull", "Login Successful!!", "success");
        
         //   sessionStorage.setItem('userid', _id);
         //   sessionStorage.setItem('username', name);

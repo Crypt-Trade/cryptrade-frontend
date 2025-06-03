@@ -41,7 +41,7 @@ const Allpackages = () => {
     formData.append("user_object_id", userobject_id); // Replace with actual user ID
     formData.append("user_mySponsor_id", useId); // Replace with actual sponsor ID
     formData.append("user_name", user_name); // Replace with actual user name
-    formData.append("order_price", selectedPackage === "kickstarter" ? 50 : selectedPackage === "bull" ? 100 : selectedPackage === "whales" ? 500 : 25);
+    formData.append("order_price", selectedPackage === "kickstarter" ? 50 : selectedPackage === "bull" ? 100 : selectedPackage === "whales" ? 500 : selectedPackage === "Premium" ? 1000 : 25);
     formData.append("package_name", selectedPackage);
     formData.append("image", screenshot);
 
@@ -182,8 +182,48 @@ const Allpackages = () => {
           </div>
         </div>
 
-        {/* Monthly Subscription (Add-On) */}
+        {/* Premium package */}
         <div className="col-md-3 my-4">
+        <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 rounded-3 h-100 cardpackage">
+            <div className="card-body d-flex flex-column">
+              <h3 className="text-center fw-bold">Premium Master Trader Course</h3>
+              <div className="fw-bold h5 text-center">1000 USDT(Online/ Offline)</div>
+              <div className="flex-grow-1">
+              <div className="d-flex">
+                <div>🌟</div>
+                <div className="ms-2">Portfolio Management</div>
+              </div>
+              <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">20 GEM Coin List</div>
+              </div>
+              <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">10 MEME Coin List</div>
+              </div>
+               <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">Lifetime  Subscription</div>
+              </div>
+               <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">Lifetime Support By Expert Trader</div>
+              </div>
+             
+              <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">Monthly Scholarship 3%</div>
+              </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Monthly Subscription (Add-On) */}
+    
+      </div>
+      <div className="row">
+            <div className="col-md-3 my-4">
         <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 rounded-3 h-100 cardpackage">
             <div className="card-body d-flex flex-column">
               <h5 className="text-center fw-bold">Monthly subscription</h5>
@@ -211,6 +251,7 @@ const Allpackages = () => {
       <option className="option_package" value="bull">Bull: 100 USDT</option>
       <option className="option_package" value="whales">Whales: 500 USDT</option>
       <option className="option_package" value="monthly">Monthly: 25 USDT</option>
+      <option className="option_package" value="Premium">Premium: 1000 USDT</option>
     </select>
   </div>
 </div>

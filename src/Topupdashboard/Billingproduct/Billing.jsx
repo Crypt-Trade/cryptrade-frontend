@@ -72,7 +72,8 @@ const submitwithoutOrder = async () => {
     { productId: 1, name: "Kick Starter", price: 50 },
     { productId: 2, name: "Bull Starter", price: 100 },
     { productId: 3, name: "Whales Starter", price: 500 },
-    { productId: 4, name: "Monthly subscription", price:25 },
+    { productId: 4, name: "Premium Master Trader Course", price: 1000 },
+    { productId: 5, name: "Monthly subscription", price:25 },
    
   ];
   /////user search for finding name
@@ -124,7 +125,7 @@ const submitwithoutOrder = async () => {
             <div className="row text-align-center">
               {products.map((product) => (
                 <div className="col-md-4 my-4" key={product.productId}>
-                  <div className="card">
+                  <div className="card h-100">
                     <div className="card-body">
                       <h5>{product.name}</h5>
                       <div className="fw-bold h5">Price: {product.price} USDT</div>

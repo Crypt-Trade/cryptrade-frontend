@@ -76,10 +76,17 @@ const Usernavbar = () => {
             <div>🤝</div>
             <span className="font-weight-normal ms-3">Direct affiliate</span>
         </div></a></li>
-        <li><a href="/userdashboard/weeklypayout" className="text-white d-block pt-4 sidebaritem">
+        <li>
+        <a href="/userdashboard/weeklypayout" className="text-white d-block pt-4 sidebaritem">
         <div className='d-flex'>
             <div>💲</div>
             <span className="font-weight-normal ms-3">Weekly payout</span>
+        </div></a></li>
+         <li>
+        <a href="/userdashboard/scholarship" className="text-white d-block pt-4 sidebaritem">
+        <div className='d-flex'>
+            <div><i className='fa fa-book'></i></div>
+            <span className="font-weight-normal ms-3">Scholarship</span>
         </div></a></li>
         {/* <li className='mt-2'>
         <div className="col-lg-2 text-center">

@@ -9,7 +9,7 @@ const Topupheader = () => {
         <span className="mx-auto text-center fw-bold h3">Welcome To  Top-up Dashboard</span>
 
         {/* Logout Button (Aligned to Right) */}
-       <a href='/'> <button className="btn btn-primary ms-auto btn-lg">Logout</button></a>
+       <a href='/topupdashboard/login/'> <button className="btn btn-primary ms-auto btn-lg">Logout</button></a>
       </div>
   </header>
    </>

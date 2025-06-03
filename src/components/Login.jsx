@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../css/login.css";
 import axios from "axios";
 import Swal from 'sweetalert2';
+import swal from 'sweetalert';
 import logo from "../assets/images/crypto.png"; // Ensure correct path
 
 const Login = () => {
@@ -71,7 +72,7 @@ const Login = () => {
           })
           .catch(err => {
             console.log(err);
-            swal("Opps", err.response.data.message , "error");
+            swal("Something went wrong", err.response.data.message , "error");
           })
       }
     }
