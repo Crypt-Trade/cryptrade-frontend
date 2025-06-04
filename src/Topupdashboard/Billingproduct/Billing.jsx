@@ -9,7 +9,7 @@ const Billing = () => {
   const ROOT_URL = import.meta.env.VITE_LOCALHOST_URL;
   const [users, setUser] = useState([]);
    const [selectedUserName, setSelectedUserName] = useState("");
-
+  const token = sessionStorage.getItem("token");
   const addToCart = (product) => {
     setCart((prevCart) => {
       if (prevCart.length > 0) {
@@ -33,15 +33,22 @@ const Billing = () => {
         mySponsorId: sponsorId,
         order_no: orderNo,
         order_price: order_price,
+      }
+    ,
+    
+       {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
       });
       // alert(response.data.message);
-      swal("yeah!", response.data.message, "success");
+     swal("Success!","Order have been Submitted successfully" , "success");
       setCart([]);
       setSponsorId("");
       setOrderNo("");
     } catch (error) {
       console.error("Error submitting order:", error);
-      alert("Failed to submit order.");
+      swal("Sorry!","Please relogin and try again", "error");
     }
   };
 const submitwithoutOrder = async () => {
@@ -56,18 +63,28 @@ const submitwithoutOrder = async () => {
       mySponsorId: sponsorId,
      package_name: package_name,
       order_price: order_price
-    });
+    },
+    
+       {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    
+  );
     // alert(response.data.message);
-    swal("yeah!", response.data.message, "success");
+    swal("Success!","Order have been Submitted successfully" , "success");
     setCart([]);
     setSponsorId("");
     setOrderNo("");
   } catch (error) {
     console.error("Error submitting order:", error);
-    alert("Failed to submit order.");
+    swal("Sorry!","Please relogin and try again", "error");
   }
 };
-
+const removeFromCart = () => {
+  setCart([]);
+};
   const products = [
     { productId: 1, name: "Kick Starter", price: 50 },
     { productId: 2, name: "Bull Starter", price: 100 },
@@ -171,9 +188,15 @@ const submitwithoutOrder = async () => {
                 <ul>
                   {cart.map((item) => (
                     <div className="card" key={item.productId}>
-                      <div className="card-body">
-                        <span>{item.name} - {item.price} USDT</span>
-                      </div>
+                       <div className="card-body d-flex justify-content-between align-items-center">
+          <span>{item.name} - {item.price} USDT</span>
+          <i
+            className="fa fa-trash text-danger"
+            style={{ cursor: "pointer" }}
+            title="Remove"
+            onClick={() => removeFromCart()}
+          ></i>
+        </div>
                     </div>
                   ))}
                 </ul>
@@ -210,9 +233,15 @@ const submitwithoutOrder = async () => {
                 <ul>
                   {cart.map((item) => (
                     <div className="card" key={item.productId}>
-                      <div className="card-body">
-                        <span>{item.name} - {item.price} USDT</span>
-                      </div>
+                      <div className="card-body d-flex justify-content-between align-items-center">
+          <span>{item.name} - {item.price} USDT</span>
+          <i
+            className="fa fa-trash text-danger"
+            style={{ cursor: "pointer" }}
+            title="Remove"
+            onClick={() => removeFromCart()}
+          ></i>
+        </div>
                     </div>
                   ))}
                 </ul>

@@ -251,7 +251,7 @@ const Allpackages = () => {
       <option className="option_package" value="bull">Bull: 100 USDT</option>
       <option className="option_package" value="whales">Whales: 500 USDT</option>
       <option className="option_package" value="monthly">Monthly: 25 USDT</option>
-      <option className="option_package" value="Premium">Premium: 1000 USDT</option>
+      <option className="option_package" value="Premium">Premium Master Trader Course: 1000 USDT</option>
     </select>
   </div>
 </div>
@@ -274,7 +274,7 @@ const Allpackages = () => {
                   </div>
                   <div className="mt-3">
                     <label>Upload Screenshot:</label>
-                    <input type="file" className="form-control" onChange={handleFileChange} />
+                    <input type="file"  accept="image/*" className="form-control" onChange={handleFileChange} />
                   </div>
                   <div className="text-center">
                     <button className="btn btn-primary mt-3 w-25" onClick={handleSubmit} disabled={loading}>
