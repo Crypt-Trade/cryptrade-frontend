@@ -19,18 +19,18 @@ const Topuplogin = () => {
     else {
       axios.post(ROOT_URL+'/topup/login', { email, password })
         .then(res => {
-          console.log(res);
-        //   const {token : token} = res.data;
-        //   const {_id : _id} = res.data.user;
+          console.log(res.data);
+          let  token = res.data.token;
           // const {_id : _id} = res.data.user;
-        //   const {name : name} = res.data.user;
-        //   const {mySponsorId : mySponsorId} = res.data.user;
+          // const {_id : _id} = res.data.user;
+          // const {name : name} = res.data.user;
+          // const {mySponsorId : mySponsorId} = res.data.user;
           swal("Successfull", "Login Successful!!", "success");
        
-        //   sessionStorage.setItem('userid', _id);
-        //   sessionStorage.setItem('username', name);
-        //   sessionStorage.setItem('mySponsorId', mySponsorId);
-        //   sessionStorage.setItem('token', token);
+          // sessionStorage.setItem('userid', _id);
+          // sessionStorage.setItem('username', name);
+          // sessionStorage.setItem('mySponsorId', mySponsorId);
+          sessionStorage.setItem('token', token);
           
             navigate('/topupdashboard/home');
             

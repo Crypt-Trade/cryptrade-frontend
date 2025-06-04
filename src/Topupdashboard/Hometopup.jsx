@@ -11,11 +11,15 @@ const Hometopup = () => {
     total_Balance: 0,
   });
   const ROOT_URL = import.meta.env.VITE_LOCALHOST_URL || 'http://localhost:3000';
-
+  const token = sessionStorage.getItem('token');
   useEffect(() => {
     const fetchTopupDashboardData = async () => {
       try {
-        const response = await axios.get(`${ROOT_URL}/dashboard/topup-dashboard`); // Replace with your actual API endpoint
+        const response = await axios.get(`${ROOT_URL}/dashboard/topup-dashboard`,{
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        }); // Replace with your actual API endpoint
         console.log("Dashboard data:", response.data); // Log the response data
         setData(response.data);
       } catch (error) {
