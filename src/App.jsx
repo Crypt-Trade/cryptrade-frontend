@@ -24,6 +24,7 @@ import Signup from "./components/UserSignup/Signup.jsx";
 import Walletdetails from "./components/Userdashboard/Walletdetails/Walletdetails.jsx";
 import Topuplogin from "./Topupdashboard/Login/Topuplogin.jsx";
 import Scholarship from "./components/Userdashboard/Scholarship/Scholarship.jsx";
+import Reward from "./components/Userdashboard/Rewards/Reward.jsx";
 function App() {
  
 
@@ -47,9 +48,9 @@ function App() {
         <Route path='/userdashboard/walletdetails' element={<Dashboardlayout><Walletdetails/></Dashboardlayout>} />
         <Route path='/userdashboard/buynow' element={<Dashboardlayout><Buynow/></Dashboardlayout>} />
         <Route path='/userdashboard/scholarship' element={<Dashboardlayout><Scholarship/></Dashboardlayout>} />
-        
         <Route path='/usersignup/verifysponsor' element={<Verifysponsor />} />
         <Route path='/usersignup/Signup' element={<Signup />} />
+        <Route path='/userdashboard/rewards' element={<Dashboardlayout><Reward/></Dashboardlayout>} />
         {/* Topup dashboard */}
     <Route path='/topupdashboard/login' element={<Topuplogin/>}/>
       <Route path='/topupdashboard/home' element={<Topupdashboardlayout><Hometopup/></Topupdashboardlayout>}  />

@@ -8,6 +8,7 @@ const Homepage = () => {
     walletDetails: {},
   });
   const [current, setCurrent] = useState([]);
+  const [rank , setRank] = useState([]);
   const [weeklyPayoutTotal, setWeeklyPayoutTotal] = useState(0);
   const [referralleftLink, setReferralleftLink] = useState([]);
   const [referralrightLink, setReferralrightLink] = useState([]);
@@ -17,6 +18,7 @@ const Homepage = () => {
 
   const ROOT_URL = import.meta.env.VITE_LOCALHOST_URL || "http://localhost:5000";
   const sponsorId = sessionStorage.getItem('mySponsorId');
+  const mysponsorid = sessionStorage.getItem('mySponsorId');
   
 
   useEffect(() => {
@@ -43,9 +45,20 @@ const Homepage = () => {
         console.error("Error fetching dashboard data:", error);
       }
     };
+    const fetchRankData = async () => {
+       if (!mysponsorid) return; 
+      try {
+        const response = await axios.post(`${ROOT_URL}/user/ranking`,{mysponsorid});
+        console.log("Rank Data:", response.data);
+        setRank(response.data);
+      } catch (error) {
+        console.error("Error fetching rank data:", error);
+      }
+    }
 
     fetchDashboardData();
-  }, []);
+    fetchRankData();
+  }, [mysponsorid]);
   const handleCopyLinkleft = () => {
     if (referralleftLink) {
       navigator.clipboard
@@ -183,6 +196,30 @@ const Homepage = () => {
           </div>
         </div>
       </div>
+      <div className="row p-2">
+        <div className="col-md-3 stretch-card grid-margin">
+          <div className="card card-img-holder text-dark h-75 usercard1">
+            <div className="card-body">
+              <h4 className="font-weight-normal mb-3">
+                Rank
+                <i className="mdi mdi-chart-line mdi-24px float-end"></i>
+              </h4>
+              
+                <h5 className="mb-5">
+  {rank?.message === "No rank achieved yet"
+    ? "No rank achieved"
+    : rank?.userRank?.ranking_details?.length > 0
+    ? rank.userRank.ranking_details[rank.userRank.ranking_details.length - 1].rank_name
+    : "Loading..."}
+</h5>
+
+              
+           
+              </div>
+          </div>
+        </div>
+      </div>
+      
       <div className="row p-1">
           
       <div className="col-md-6 stretch-card grid-margin">

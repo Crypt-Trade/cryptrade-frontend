@@ -88,6 +88,12 @@ const Usernavbar = () => {
             <div><i className='fa fa-book'></i></div>
             <span className="font-weight-normal ms-3">Scholarship</span>
         </div></a></li>
+         <li>
+        <a href="/userdashboard/rewards" className="text-white d-block pt-4 sidebaritem">
+        <div className='d-flex'>
+            <div><i className='fa fa-trophy' style={{color:"gold"}}></i></div>
+            <span className="font-weight-normal ms-3">Rewards</span>
+        </div></a></li>
         {/* <li className='mt-2'>
         <div className="col-lg-2 text-center">
          
