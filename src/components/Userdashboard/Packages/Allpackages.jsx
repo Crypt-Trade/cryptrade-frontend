@@ -62,7 +62,7 @@ const Allpackages = () => {
 
   return (
     <div className="container">
-   
+      {/* <h2 className="text-center my-2">All Packages</h2> */}
       <div className="row justify-content-center">
         {/* Kick Starter Package */}
         <div className="col-md-3 my-4 ">
@@ -87,6 +87,10 @@ const Allpackages = () => {
                <div className="d-flex mt-2">
               <div>🌟</div>
               <div className="ms-2">Bonus 1-2 long-term GEM coin</div>
+              </div>
+               <div className="d-flex mt-2">
+              <div>🌟</div>
+              <div className="ms-2">Monthly Scholarship 3%</div>
               </div>
                 {/* <div className="kick">🌟 Basic trading knowledge</div> */}
                 {/* <div className="kick">🌟 Meme coin name</div> */}
@@ -124,6 +128,10 @@ const Allpackages = () => {
               <div className="d-flex mt-2">
                 <div>🌟</div>
                 <div className="ms-2">Bonus 5 long-term holding</div>
+              </div>
+               <div className="d-flex mt-2">
+              <div>🌟</div>
+              <div className="ms-2">Monthly Scholarship 5%</div>
               </div>
                 {/* <div className="kick">🌟 Advance crypto knowledge</div> */}
                 {/* <div className="kick">🌟 Meme coin checklist</div> */}
@@ -176,6 +184,10 @@ const Allpackages = () => {
                 <div>🌟</div>
                 <div className="ms-2">20 long-term coin name</div>
               </div>
+               <div className="d-flex mt-2">
+              <div>🌟</div>
+              <div className="ms-2">Monthly Scholarship 8%</div>
+              </div>
                 
               </div>
             </div>
@@ -212,7 +224,7 @@ const Allpackages = () => {
              
               <div className="d-flex mt-2">
                 <div>🌟</div>
-                <div className="ms-2">Monthly Scholarship 3%</div>
+                <div className="ms-2">Monthly Scholarship 10%</div>
               </div> 
               </div>
             </div>
@@ -223,6 +235,76 @@ const Allpackages = () => {
     
       </div>
       <div className="row">
+       <div className="col-md-3 my-4">
+        <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 rounded-3 h-100 cardpackage">
+            <div className="card-body d-flex flex-column">
+              <h3 className="text-center fw-bold">Bull Master Trader Course</h3>
+              <div className="fw-bold h5 text-center">2000 USDT(Online/ Offline)</div>
+              <div className="flex-grow-1">
+              <div className="d-flex">
+                <div>🌟</div>
+                <div className="ms-2">Portfolio Management</div>
+              </div>
+              <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">20 GEM Coin List</div>
+              </div>
+              <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">10 MEME Coin List</div>
+              </div>
+               <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">Lifetime  Subscription</div>
+              </div>
+               <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">Lifetime Support By Expert Trader</div>
+              </div>
+             
+              <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">Monthly Scholarship 12%</div>
+              </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+         <div className="col-md-3 my-4">
+        <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 rounded-3 h-100 cardpackage">
+            <div className="card-body d-flex flex-column">
+              <h3 className="text-center fw-bold">Whales Master Trader Course</h3>
+              <div className="fw-bold h5 text-center">5000 USDT(Online/ Offline)</div>
+              <div className="flex-grow-1">
+              <div className="d-flex">
+                <div>🌟</div>
+                <div className="ms-2">Portfolio Management</div>
+              </div>
+              <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">20 GEM Coin List</div>
+              </div>
+              <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">10 MEME Coin List</div>
+              </div>
+               <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">Lifetime  Subscription</div>
+              </div>
+               <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">Lifetime Support By Expert Trader</div>
+              </div>
+             
+              <div className="d-flex mt-2">
+                <div>🌟</div>
+                <div className="ms-2">Monthly Scholarship 15%</div>
+              </div> 
+              </div>
+            </div>
+          </div>
+        </div>
             <div className="col-md-3 my-4">
         <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 rounded-3 h-100 cardpackage">
             <div className="card-body d-flex flex-column">
@@ -252,6 +334,8 @@ const Allpackages = () => {
       <option className="option_package" value="whales">Whales: 500 USDT</option>
       <option className="option_package" value="monthly">Monthly: 25 USDT</option>
       <option className="option_package" value="Premium">Premium Master Trader Course: 1000 USDT</option>
+      <option className="option_package" value="Premium">Bull Master Trader Course: 2000 USDT</option>
+      <option className="option_package" value="Premium">Whales Master Trader Course: 5000 USDT</option>
     </select>
   </div>
 </div>

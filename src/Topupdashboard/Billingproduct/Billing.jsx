@@ -91,7 +91,9 @@ const removeFromCart = () => {
     { productId: 2, name: "Bull Starter", price: 100 },
     { productId: 3, name: "Whales Starter", price: 500 },
     { productId: 4, name: "Premium Master Trader Course", price: 1000 },
-    { productId: 5, name: "Monthly subscription", price:25 },
+    { productId: 5, name: "Bull Master Trader Course", price: 2000 },
+     { productId: 6, name: "Whales Master Trader Course", price: 5000 },
+    { productId: 7, name: "Monthly subscription", price:25 },
    
   ];
   /////user search for finding name

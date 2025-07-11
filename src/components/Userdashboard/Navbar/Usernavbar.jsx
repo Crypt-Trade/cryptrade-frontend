@@ -3,7 +3,11 @@ import "../../../css/userdashboard/usernavbar.css"
 import  logo from "../../../assets/images/crypto.png";
 const Usernavbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState("");
   
+  const handleItemClick = (itemName) => {
+    setActiveItem(itemName); // Update active item
+  };
 
   return (
     <>
@@ -26,70 +30,94 @@ const Usernavbar = () => {
       </a>
 
       <ul className="list-unstyled p-3">
-        <li><a href="/userdashboard" className="text-white d-block pt-4 sidebaritem ">
+        <li><a href="/userdashboard" className={`d-block py-2 sidebaritem ${
+      window.location.pathname === "/userdashboard" ? "active-sidebar-item" : ""
+    } text-white`}  >
         <div className='d-flex'>
             <div>🏠</div>
             <span className="font-weight-normal ms-3">Home</span>
         </div>
         </a></li>
-        <li><a href="/userdashboard/welcome" className="text-white d-block pt-4 sidebaritem">
+        <li><a href="/userdashboard/welcome" className={`d-block py-2 sidebaritem ${
+      window.location.pathname === "/userdashboard/welcome" ? "active-sidebar-item" : ""
+    } text-white`}>
         <div className='d-flex'>
             <div>🙏</div>
             <span className="font-weight-normal ms-3">Welcome</span>
         </div>
          </a></li>
-         <li><a href="/userdashboard/packages" className="text-white d-block pt-4 sidebaritem">
+         <li><a href="/userdashboard/packages"  className={`d-block py-2 sidebaritem ${
+      window.location.pathname === "/userdashboard/packages" ? "active-sidebar-item" : ""
+    } text-white`}>
         <div className='d-flex'>
             <div>📦</div>
             <span className="font-weight-normal ms-3">All packages</span>
         </div>
          </a></li>
-         <li><a href="/userdashboard/walletdetails" className="text-white d-block pt-4 sidebaritem">
+         <li><a href="/userdashboard/walletdetails"  className={`d-block py-2 sidebaritem ${
+      window.location.pathname === "/userdashboard/walletdetails" ? "active-sidebar-item" : ""
+    } text-white`}>
         <div className='d-flex'>
             <div>💲</div>
             <span className="font-weight-normal ms-3">Wallet details</span>
         </div>
          </a></li>
-         <li><a href="/userdashboard/register" className="text-white d-block pt-4 sidebaritem">
+         <li><a href="/userdashboard/register"  className={`d-block py-2 sidebaritem ${
+      window.location.pathname === "/userdashboard/register" ? "active-sidebar-item" : ""
+    } text-white`}>
         <div className='d-flex'>
             <div>🧑‍💼</div>
             <span className="font-weight-normal ms-3">Registration</span>
         </div>
          </a></li>
-         <li><a href="/userdashboard/ewallet" className="text-white d-block pt-4 sidebaritem">
+         <li><a href="/userdashboard/ewallet"  className={`d-block py-2 sidebaritem ${
+      window.location.pathname === "/userdashboard/ewallet" ? "active-sidebar-item" : ""
+    } text-white`}>
         <div className='d-flex'>
             <div>📱</div>
             <span className="font-weight-normal ms-3">E-Wallet</span>
         </div></a></li>
-        <li><a href="/userdashboard/reports" className="text-white d-block pt-4 sidebaritem">
+        <li><a href="/userdashboard/reports"  className={`d-block py-2 sidebaritem ${
+      window.location.pathname === "/userdashboard/reports" ? "active-sidebar-item" : ""
+    } text-white`}>
         <div className='d-flex'>
             <div>📊</div>
             <span className="font-weight-normal ms-3">Reports</span>
         </div></a></li>
-        <li><a href="/userdashboard/genealogy" className="text-white d-block pt-4 sidebaritem">
+        <li><a href="/userdashboard/genealogy"  className={`d-block py-2 sidebaritem ${
+      window.location.pathname === "/userdashboard/genealogy" ? "active-sidebar-item" : ""
+    } text-white`}>
         <div className='d-flex'>
             <div>🌳</div>
-            <span className="font-weight-normal ms-3">Geneology tree</span>
+            <span className="font-weight-normal ms-3">Genealogy tree</span>
         </div></a></li>
-        <li><a href="/userdashboard/directaffilate" className="text-white d-block pt-4 sidebaritem">
+        <li><a href="/userdashboard/directaffilate"  className={`d-block py-2 sidebaritem ${
+      window.location.pathname === "/userdashboard/directaffilate" ? "active-sidebar-item" : ""
+    } text-white`}>
         <div className='d-flex'>
             <div>🤝</div>
             <span className="font-weight-normal ms-3">Direct affiliate</span>
         </div></a></li>
         <li>
-        <a href="/userdashboard/weeklypayout" className="text-white d-block pt-4 sidebaritem">
+        <a href="/userdashboard/weeklypayout"  className={`d-block py-2 sidebaritem ${
+      window.location.pathname === "/userdashboard/weeklypayout" ? "active-sidebar-item" : ""
+    } text-white`}>
         <div className='d-flex'>
             <div>💲</div>
             <span className="font-weight-normal ms-3">Weekly payout</span>
         </div></a></li>
          <li>
-        <a href="/userdashboard/scholarship" className="text-white d-block pt-4 sidebaritem">
+        <a href="/userdashboard/scholarship"  className={`d-block py-2 sidebaritem ${
+      window.location.pathname === "/userdashboard/scholarship" ? "active-sidebar-item" : ""
+    } text-white`}>
         <div className='d-flex'>
             <div><i className='fa fa-book'></i></div>
             <span className="font-weight-normal ms-3">Scholarship</span>
         </div></a></li>
          <li>
-        <a href="/userdashboard/rewards" className="text-white d-block pt-4 sidebaritem">
+        <a href="/userdashboard/rewards"  className={`d-block py-2 sidebaritem ${
+      window.location.pathname === "/userdashboard/rewards" ? "active-sidebar-item" : ""
+    } text-white`}>
         <div className='d-flex'>
             <div><i className='fa fa-trophy' style={{color:"gold"}}></i></div>
             <span className="font-weight-normal ms-3">Rewards</span>

@@ -1,3 +1,11 @@
+.active-sidebar-item {
+  background-color: white !important;
+  color: #004d93 !important;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+
 .sidebaritem{
     text-decoration: none !important
 }
