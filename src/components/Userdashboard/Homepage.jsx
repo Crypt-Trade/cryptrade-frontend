@@ -218,6 +218,21 @@ const Homepage = () => {
               </div>
           </div>
         </div>
+         <div className="col-md-3 stretch-card grid-margin">
+          <div className="card card-img-holder text-dark h-75 usercard1">
+            <div className="card-body">
+              <h4 className="font-weight-normal mb-3">
+                Current Package
+                <i className="mdi mdi-chart-line mdi-24px float-end"></i>
+              </h4>
+              
+                <h5 className="mb-5">{userDetails.subcription}</h5>
+
+              
+           
+              </div>
+          </div>
+        </div>
       </div>
       
       <div className="row p-1">

@@ -41,7 +41,7 @@ const Allpackages = () => {
     formData.append("user_object_id", userobject_id); // Replace with actual user ID
     formData.append("user_mySponsor_id", useId); // Replace with actual sponsor ID
     formData.append("user_name", user_name); // Replace with actual user name
-    formData.append("order_price", selectedPackage === "kickstarter" ? 50 : selectedPackage === "bull" ? 100 : selectedPackage === "whales" ? 500 : selectedPackage === "Premium" ? 1000 : 25);
+    formData.append("order_price", selectedPackage === "signalpack" ? 25: selectedPackage === "Kick Starter" ? 50 : selectedPackage === "Bull Starter" ? 100 : selectedPackage === "Whales Starter" ? 500 : selectedPackage === "Premium Master Trader Course"  ? 1000 : selectedPackage === "Bull Master Trader Course" ? 2000 : selectedPackage ==="Whales Master Trader Course"? 5000: 20);
     formData.append("package_name", selectedPackage);
     formData.append("image", screenshot);
 
@@ -64,6 +64,22 @@ const Allpackages = () => {
     <div className="container">
       {/* <h2 className="text-center my-2">All Packages</h2> */}
       <div className="row justify-content-center">
+      {/* premium signal pack */}
+         <div className="col-md-3 my-4 ">
+        <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 h-100 rounded-3 cardpackage">
+
+            <div className="card-body d-flex flex-column">
+              <h3 className="text-center fw-bold">Premium signal pack</h3>
+              <div className="fw-bold h5 text-center mt-2">25 USDT (Online)</div>
+              <div className="flex-grow-1">
+              <div className="d-flex mt-2">
+              <div>🌟</div>
+              <div className="ms-2">Crypto signal</div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
         {/* Kick Starter Package */}
         <div className="col-md-3 my-4 ">
         <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 h-100 rounded-3 cardpackage">
@@ -195,7 +211,13 @@ const Allpackages = () => {
         </div>
 
         {/* Premium package */}
-        <div className="col-md-3 my-4">
+        
+
+        {/* Monthly Subscription (Add-On) */}
+    
+      </div>
+      <div className="row">
+      <div className="col-md-3 my-4">
         <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 rounded-3 h-100 cardpackage">
             <div className="card-body d-flex flex-column">
               <h3 className="text-center fw-bold">Premium Master Trader Course</h3>
@@ -230,11 +252,6 @@ const Allpackages = () => {
             </div>
           </div>
         </div>
-
-        {/* Monthly Subscription (Add-On) */}
-    
-      </div>
-      <div className="row">
        <div className="col-md-3 my-4">
         <div className="card p-3 mt-3 w-100 w-md-75 w-lg-50 rounded-3 h-100 cardpackage">
             <div className="card-body d-flex flex-column">
@@ -310,7 +327,7 @@ const Allpackages = () => {
             <div className="card-body d-flex flex-column">
               <h5 className="text-center fw-bold">Monthly subscription</h5>
               <h5 className="text-center fw-bold">(Add On)</h5>
-              <div className="fw-bold h5 text-center">25 USDT</div>
+              <div className="fw-bold h5 text-center">20 USDT</div>
               <div className="flex-grow-1">
               <div className="d-flex">
                 <div >🌟</div>
@@ -329,13 +346,14 @@ const Allpackages = () => {
   <div className=" select_package">
     <select className="form-select" onChange={handlePackageChange}>
       <option className="option_package" value="">Select Package</option>
-      <option className="option_package" value="kickstarter">Kickstarter: 50 USDT</option>
-      <option className="option_package" value="bull">Bull: 100 USDT</option>
-      <option className="option_package" value="whales">Whales: 500 USDT</option>
-      <option className="option_package" value="monthly">Monthly: 25 USDT</option>
-      <option className="option_package" value="Premium">Premium Master Trader Course: 1000 USDT</option>
-      <option className="option_package" value="Premium">Bull Master Trader Course: 2000 USDT</option>
-      <option className="option_package" value="Premium">Whales Master Trader Course: 5000 USDT</option>
+      <option className="option_package" value="signalpack">Premium Signal Pack: 25 USDT</option>
+      <option className="option_package" value="Kick Starter">Kickstarter: 50 USDT</option>
+      <option className="option_package" value="Bull Starter">Bull: 100 USDT</option>
+      <option className="option_package" value="Whales Starter">Whales: 500 USDT</option>
+      <option className="option_package" value="monthly">Monthly subscription: 20 USDT</option>
+      <option className="option_package" value="Premium Master Trader Course">Premium Master Trader Course: 1000 USDT</option>
+      <option className="option_package" value="Bull Master Trader Course">Bull Master Trader Course: 2000 USDT</option>
+      <option className="option_package" value="Whales Master Trader Course">Whales Master Trader Course: 5000 USDT</option>
     </select>
   </div>
 </div>

@@ -81,9 +81,6 @@ const Verifysponsor = () => {
                             value={name} />
                         </div>
                         
-                     
-                        
-
                         <div className="pt-1 mb-4 text-center">
                           <button className="btn w-50 text-white" type="submit" style={{backgroundColor:"#78266f"}}   onClick={handleSubmit}>Signup</button>
                         </div>

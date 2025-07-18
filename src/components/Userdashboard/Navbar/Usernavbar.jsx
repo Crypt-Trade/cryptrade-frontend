@@ -113,6 +113,14 @@ const Usernavbar = () => {
             </Link>
           </li>
           <li>
+            <Link to="/userdashboard/withdrawalscholarship" className={`text-white d-block py-2 sidebaritem ${isActive("/userdashboard/withdrawalscholarship") ? "active-sidebar-item" : ""}`}>
+              <div className='d-flex'>
+                <div><i className='fa fa-money'></i></div>
+                <span className="font-weight-normal ms-3">Withdrawal</span>
+              </div>
+            </Link>
+          </li>
+          <li>
             <Link to="/userdashboard/rewards" className={`text-white d-block py-2 sidebaritem ${isActive("/userdashboard/rewards") ? "active-sidebar-item" : ""}`}>
               <div className='d-flex'>
                 <div><i className='fa fa-trophy' style={{ color: "gold" }}></i></div>

@@ -8,6 +8,7 @@ const Wallet = () => {
   const [uniqueKey, setUniqueKey] = useState('');
   const [accountPassword, setAccountPassword] = useState('');
 const [showPassword, setShowPassword] = useState(false);
+
 const [showPassword2, setShowPassword2] = useState(false);
 const sponsorId = sessionStorage.getItem('mySponsorId');
 const userId = sessionStorage.getItem('mySponsorId');
